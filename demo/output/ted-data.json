@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "source": "TED — Tenders Electronic Daily (official EU procurement journal)",
+    "api": "https://api.ted.europa.eu/v3/notices/search",
+    "cpv": [
+      "72000000",
+      "72200000"
+    ],
+    "country": "ROU",
+    "window_months": 12,
+    "since": "20250828",
+    "retrieved_at": "2026-08-28T15:37:55.445Z",
+    "note": "Live API data at retrieval time. Award sample capped at 100 most recent notices."
+  },
+  "demand": {
+    "contract_notices": 733,
+    "days_since_latest": 1,
+    "recent_examples": [
+      {
+        "number": "595713-2026",
+        "title": "Romania – Software configuration services – Servicii de implementare „APLICAȚIE SOFTWARE – PLATFORMĂ INTEGRATĂ”, în cadrul Proiectului “DIGITALIZAREA UAT ORAȘUL SEGARCEA”,",
+        "buyer": "ORASUL SEGARCEA",
+        "date": "2026-08-28",
+        "url": "https://ted.europa.eu/en/notice/595713-2026"
+      },
+      {
+        "number": "594235-2026",
+        "title": "Romania – Document management services – Servicii de prelucrare arhivistica a documentelor create la nivelul Primăriei Municipiului Brasov, digitizare si depozitare - ACORD CADRU - 48 luni",
+        "buyer": "MUNICIPIUL BRASOV",
+        "date": "2026-08-28",
+        "url": "https://ted.europa.eu/en/notice/594235-2026"
+      },
+      {
+        "number": "595891-2026",
+        "title": "Romania – Software-related services – “Servicii de suport tehnic pentru produse software Oracle” CR 45787",
+        "buyer": "Societatea Nationala NUCLEARELECTRICA S.A.",
+        "date": "2026-08-28",
+        "url": "https://ted.europa.eu/en/notice/595891-2026"
+      }
+    ]
+  },
+  "awards": {
+    "award_notices": 799,
+    "sample_size": 100,
+    "distinct_buyers_in_sample": 65,
+    "top_buyers": [
+      {
+        "name": "AGENTIA DE PLATI SI INTERVENTIE PENTRU AGRICULTURA",
+        "notices": 7
+      },
+      {
+        "name": "SECTOR 3 AL MUNICIPIULUI BUCURESTI",
+        "notices": 5
+      },
+      {
+        "name": "Direcția Generală de Protecție Internă",
+        "notices": 4
+      },
+      {
+        "name": "Ministerul Dezvoltării, Lucrărilor Publice și Administrației",
+        "notices": 4
+      },
+      {
+        "name": "AUTORITATEA PENTRU DIGITALIZAREA ROMANIEI",
+        "notices": 4
+      },
+      {
+        "name": "MINISTERUL AFACERILOR INTERNE",
+        "notices": 4
+      },
+      {
+        "name": "SPEEH HIDROELECTRICA SA",
+        "notices": 4
+      },
+      {
+        "name": "DISTRIBUTIE ENERGIE OLTENIA S.A.",
+        "notices": 3
+      }
+    ],
+    "top_winners": [
+      {
+        "name": "SIVECO TECHNOLOGY S.R.L.",
+        "wonNotices": 8
+      },
+      {
+        "name": "ASEE Solutions",
+        "wonNotices": 4
+      },
+      {
+        "name": "Technology Systems and Services International",
+        "wonNotices": 4
+      },
+      {
+        "name": "ONE SOFTWARE",
+        "wonNotices": 4
+      },
+      {
+        "name": "Software Imagination & Vision",
+        "wonNotices": 4
+      },
+      {
+        "name": "ORANGE ROMANIA",
+        "wonNotices": 4
+      },
+      {
+        "name": "Digi Romania S.A.",
+        "wonNotices": 4
+      },
+      {
+        "name": "AROBS SYSTEMS SRL",
+        "wonNotices": 3
+      }
+    ],
+    "awarded_value_by_currency_in_sample": {
+      "RON": 1730304473.0799994,
+      "EUR": 244259340.70000002,
+      "USD": 1280000
+    }
+  },
+  "score": {
+    "demand_volume": 25,
+    "buyer_diversity": 25,
+    "winner_openness": 25,
+    "recency": 25,
+    "total": 100
+  },
+  "score_bands": {
+    "demand_volume": "contract notices in window: 0=0, 1-4=6, 5-14=12, 15-49=18, 50+=25",
+    "buyer_diversity": "distinct buyers in award sample: 0=0, 1=5, 2-4=10, 5-9=18, 10+=25",
+    "winner_openness": "top winner share of sampled awards: no awards=0, >75%=5, 50-75%=10, 25-50%=18, <25%=25",
+    "recency": "days since latest contract notice: none=0, >180=5, 61-180=12, 31-60=18, <=30=25"
+  }
+}

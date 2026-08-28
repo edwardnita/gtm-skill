@@ -1,0 +1,133 @@
+<!doctype html>
+<!-- Template for $tender-demand-scan. Replace every double-brace token and every <tbody>
+     marked data-fill with real rows, and DELETE THIS COMMENT in the generated report.
+     Change nothing else. Keep the file self-contained. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market-entry signal — {{PRODUCT}} · {{COUNTRY_NAME}}</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1a2233; --muted:#5b6474; --line:#e4e7ec;
+    --accent:#0f6fde; --accent-soft:#e8f1fd; --good:#0e8345; --warn:#b54708; --bad:#b42318;
+  }
+  *{box-sizing:border-box;margin:0}
+  body{background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding:32px 16px}
+  .wrap{max-width:880px;margin:0 auto}
+  header{margin-bottom:20px}
+  .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-size:26px;line-height:1.25;margin:6px 0 4px}
+  .sub{color:var(--muted);font-size:13.5px}
+  .sub a{color:var(--accent)}
+  .grid{display:grid;grid-template-columns:220px 1fr;gap:16px;margin:18px 0}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+  .score-card{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .score-num{font-size:56px;font-weight:800;letter-spacing:-.02em;color:{{SCORE_COLOR}}}
+  .score-den{font-size:15px;color:var(--muted);font-weight:600}
+  .score-label{margin-top:6px;font-weight:700;font-size:14px;color:{{SCORE_COLOR}}}
+  .score-note{margin-top:8px;font-size:12px;color:var(--muted)}
+  .bars{display:flex;flex-direction:column;gap:12px;justify-content:center}
+  .bar-row{display:grid;grid-template-columns:170px 1fr 68px;gap:10px;align-items:center;font-size:13.5px}
+  .bar-row .why{grid-column:1/-1;margin-top:-8px;font-size:12px;color:var(--muted)}
+  .track{display:block;height:10px;background:var(--accent-soft);border-radius:6px;overflow:hidden}
+  .fill{display:block;height:100%;background:var(--accent);border-radius:6px}
+  .pts{text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  h2{font-size:16px;margin:26px 0 10px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{ text-align:left;color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line)}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .pill{display:inline-block;background:var(--accent-soft);color:var(--accent);border-radius:99px;padding:2px 10px;font-size:12px;font-weight:600;margin:2px 4px 2px 0}
+  .fine{font-size:12.5px;color:var(--muted)}
+  .callout{border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;padding:12px 14px;font-size:13.5px;margin:14px 0}
+  footer{margin-top:26px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  ul{padding-left:18px}
+  li{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Market-entry signal report · public procurement</div>
+    <h1>{{PRODUCT}} — {{COUNTRY_NAME}}</h1>
+    <div class="sub">
+      CPV {{CPV_LIST}} · window: last {{MONTHS}} months · data retrieved {{RETRIEVED_AT}} from
+      <a href="https://ted.europa.eu">TED — Tenders Electronic Daily</a> (official EU procurement journal), via {{API_URL}}
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="card score-card">
+      <div><span class="score-num">{{SCORE_TOTAL}}</span><span class="score-den">/100</span></div>
+      <div class="score-label">{{SCORE_VERDICT}}</div>
+      <div class="score-note">Heuristic signal from counted evidence below — not market research, not a bid/no-bid decision.</div>
+    </div>
+    <div class="card bars">
+      <div class="bar-row"><span>Demand volume</span><span class="track"><span class="fill" style="width:{{PCT_DEMAND}}%"></span></span><span class="pts">{{S_DEMAND}}/25</span><span class="why">{{WHY_DEMAND}}</span></div>
+      <div class="bar-row"><span>Buyer diversity</span><span class="track"><span class="fill" style="width:{{PCT_BUYERS}}%"></span></span><span class="pts">{{S_BUYERS}}/25</span><span class="why">{{WHY_BUYERS}}</span></div>
+      <div class="bar-row"><span>Winner openness</span><span class="track"><span class="fill" style="width:{{PCT_OPEN}}%"></span></span><span class="pts">{{S_OPEN}}/25</span><span class="why">{{WHY_OPEN}}</span></div>
+      <div class="bar-row"><span>Recency</span><span class="track"><span class="fill" style="width:{{PCT_RECENCY}}%"></span></span><span class="pts">{{S_RECENCY}}/25</span><span class="why">{{WHY_RECENCY}}</span></div>
+    </div>
+  </div>
+
+  <div class="callout">{{HEADLINE_FINDING}}</div>
+
+  <h2>Is there demand?</h2>
+  <div class="card">
+    <p>{{DEMAND_NARRATIVE}}</p>
+    <p class="fine" style="margin-top:8px">Counted from contract notices (calls for tender) matching CPV {{CPV_LIST}} with place of performance {{COUNTRY_ISO3}}, published since {{SINCE_DATE}}. Source: TED API, retrieved {{RETRIEVED_AT}}.</p>
+  </div>
+
+  <h2>Who buys — top contracting authorities</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Authority</th><th class="num">Awarded notices in sample</th></tr></thead>
+      <tbody data-fill="buyers">
+        <tr><td>{{BUYER_NAME}}</td><td class="num">{{BUYER_COUNT}}</td></tr>
+      </tbody>
+    </table>
+    <p class="fine" style="margin-top:8px">From the {{SAMPLE_SIZE}} most recent award notices. Authorities are public institutions acting in their public role; no personal data is included.</p>
+  </div>
+
+  <h2>Who wins — incumbent competitors</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Company</th><th class="num">Notices won in sample</th></tr></thead>
+      <tbody data-fill="winners">
+        <tr><td>{{WINNER_NAME}}</td><td class="num">{{WINNER_COUNT}}</td></tr>
+      </tbody>
+    </table>
+    <p class="fine" style="margin-top:8px">Awarded value in sample: {{VALUE_SUMMARY}}. Company-level facts only, from published award notices.</p>
+  </div>
+
+  <h2>Three live example tenders</h2>
+  <div class="card">
+    <table>
+      <thead><tr><th>Tender</th><th>Buyer</th><th class="num">Published</th></tr></thead>
+      <tbody data-fill="examples">
+        <tr><td><a href="{{EX_URL}}">{{EX_TITLE}}</a></td><td>{{EX_BUYER}}</td><td class="num">{{EX_DATE}}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Method, confidence, and limitations</h2>
+  <div class="card">
+    <ul>
+      <li><strong>CPV mapping:</strong> "{{PRODUCT}}" was mapped to {{CPV_MAPPING_EXPLANATION}}. A different mapping changes the results; the mapping is stated so it can be challenged.</li>
+      <li><strong>Scoring bands (fixed, not tuned):</strong> demand volume — {{BAND_DEMAND}}; buyer diversity — {{BAND_BUYERS}}; winner openness — {{BAND_OPEN}}; recency — {{BAND_RECENCY}}.</li>
+      <li><strong>Coverage:</strong> TED lists above-EU-threshold procedures; smaller national tenders are not counted, so demand is understated, never overstated.</li>
+      <li>{{EXTRA_LIMITATION}}</li>
+    </ul>
+  </div>
+
+  <footer>
+    Generated by <strong>$tender-demand-scan</strong> · every figure above derives from the TED API responses retrieved at {{RETRIEVED_AT}} · this report never includes personal contact data and does not make the bid/no-bid decision.
+  </footer>
+</div>
+</body>
+</html>

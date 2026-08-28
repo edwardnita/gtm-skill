@@ -1,18 +1,18 @@
 {
   "schema_version": 2,
   "team": {
-    "name": "TODO team name",
-    "members": ["TODO member 1"]
+    "name": "Tender Radar",
+    "members": ["Eduard Nita"]
   },
-  "track": "TODO one of: ai-search-optimization | personalized-growth-engines | churn-detection | synthetic-buyer-simulations | plg-automation | multi-agent-orchestration | custom",
-  "problem": "TODO one sentence: who has what GTM problem and what the skill produces",
-  "entry_skill": ".agents/skills/TODO-skill-name/SKILL.md",
+  "track": "custom",
+  "problem": "A GTM lead weighing entry into a new EU market has no fast, evidence-backed way to see whether that country's public sector buys what they sell, who buys it, and who wins those contracts — $tender-demand-scan turns the official TED procurement feed into a scored, sourced market-entry signal report.",
+  "entry_skill": ".agents/skills/tender-demand-scan/SKILL.md",
   "skills": [
-    { "path": ".agents/skills/TODO-skill-name/SKILL.md", "role": "TODO the one job this skill owns" }
+    { "path": ".agents/skills/tender-demand-scan/SKILL.md", "role": "Queries the live TED API for a product and EU country, computes a deterministic 0-100 demand signal, and writes the sourced HTML market-entry report" }
   ],
   "seed_prompt": "demo/seed-prompt.md",
-  "input": "demo/input/TODO-file",
-  "output": "demo/output/TODO-file",
+  "input": "demo/input/request.md",
+  "output": "demo/output/report.html",
   "evals": "demo/evals.md",
   "run_sheet": "DEMO.md"
 }

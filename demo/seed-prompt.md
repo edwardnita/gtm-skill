@@ -1,1 +1,1 @@
-$TODO-skill-name Use the input at demo/input/TODO-file and produce TODO the observable result named in DEMO.md.
+$tender-demand-scan Read the market scan request in demo/input/request.md and produce the market-entry signal report as report.html at the repository root. Print the score line and the summary when done.
