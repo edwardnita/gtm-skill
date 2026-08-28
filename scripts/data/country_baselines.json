@@ -1,0 +1,79 @@
+{
+  "DE": {
+    "country_name": "Germany",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.19,
+    "reduced_vat_rate": 0.07,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "VerpackG (German Packaging Act)",
+      "register": "LUCID (Zentrale Stelle Verpackungsregister)",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://www.verpackungsregister.org/en/"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & German LFGB \u00a7\u00a7 30, 31",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://www.bfr.bund.de/en/food_contact_materials-231.html"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.8,
+      "express_intra_eu_freight_eur": 12.5,
+      "typical_delivery_sla_days": "3-4 days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.5
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify DE)",
+        "payment_methods": [
+          "PayPal",
+          "Klarna",
+          "Sofort / Giropay",
+          "Credit Card"
+        ]
+      },
+      {
+        "name": "Specialty Coffee Marketplace / Roaster Partnerships",
+        "payment_methods": [
+          "B2B Invoice (SEPA)",
+          "Credit Card"
+        ]
+      },
+      {
+        "name": "Amazon.de Marketplace (FBA / FBM)",
+        "payment_methods": [
+          "Amazon Pay"
+        ]
+      }
+    ]
+  },
+  "FR": {
+    "country_name": "France",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.2,
+    "reduced_vat_rate": 0.055,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "EPR / ADEME Triman Logo mandatory",
+      "register": "SYDEREP / Citeo",
+      "estimated_annual_fee_eur": 80.0,
+      "per_unit_packaging_fee_eur": 0.1,
+      "reference_url": "https://www.ademe.fr/en/"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & French DGCCRF",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://www.economie.gouv.fr/dgccrf"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.5,
+      "typical_delivery_sla_days": "3-5 days"
+    }
+  }
+}

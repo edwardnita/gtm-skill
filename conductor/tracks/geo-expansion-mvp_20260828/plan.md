@@ -1,15 +1,15 @@
 # Implementation Plan: Geo-Expansion Viability Judge (`geo-expansion-mvp`)
 
 ## Phase 1: Input Datasets & Grounded Schemas
-- [ ] Task 1.1: Create representative input profile `demo/input/expansion_request.json`
+- [x] Task 1.1: Create representative input profile `demo/input/expansion_request.json`
   - [ ] Define Specialty Coffee Dripper Kit specs (RO -> DE, MSRP, COGS, weight, materials)
   - [ ] Add public source references and pricing anchors
-- [ ] Task 1.2: Create Apify Reddit market dataset `demo/input/apify_reddit_signals.json`
+- [x] Task 1.2: Create Apify Reddit market dataset `demo/input/apify_reddit_signals.json`
   - [ ] Add genuine scraped community discussions (`r/Coffee`, `r/espresso`, `r/germany`)
   - [ ] Document Apify Actor metadata, run URL, and retrieval timestamps
-- [ ] Task 1.3: Create country regulatory & tax baselines `scripts/data/country_baselines.json`
+- [x] Task 1.3: Create country regulatory & tax baselines `scripts/data/country_baselines.json`
   - [ ] Add German/EU VAT rates, LUCID/VerpackG fees, and Food Contact Material regulations
-- [ ] Task 1.4: Phase 1 Verification Checkpoint
+- [x] Task 1.4: Phase 1 Verification Checkpoint
 
 ## Phase 2: Core Analytical & Calculation Engines (TDD)
 - [ ] Task 2.1: Write unit tests for Economics Engine in `tests/test_economics.py` (Red)

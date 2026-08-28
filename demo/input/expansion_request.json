@@ -1,0 +1,73 @@
+{
+  "request_id": "EXP-20260828-RO-DE-COFFEE",
+  "product_name": "Carpathian Artisan Ceramic Pour-Over Coffee Kit",
+  "brand": "Carpathian Craft Coffee Lab",
+  "origin_country": "RO",
+  "target_country": "DE",
+  "target_market_region": "European Union (Intra-EU Cross-Border)",
+  "category": "specialty_coffee_brewing_equipment",
+  "specifications": {
+    "weight_grams": 650,
+    "dimensions_cm": {
+      "length": 14.0,
+      "width": 14.0,
+      "height": 16.5
+    },
+    "materials": [
+      "High-fired thermal ceramic dripper",
+      "Borosilicate heat-resistant glass carafe (500ml)",
+      "BPA-free food-grade silicone collar/base",
+      "Recycled kraft cardboard packaging with cellulose buffer"
+    ],
+    "food_contact_compliance": "EU EC 1935/2004 & German LFGB Compliant",
+    "electrical_components": false
+  },
+  "financials": {
+    "currency": "EUR",
+    "unit_cogs_ex_factory": 14.5,
+    "current_home_retail_price": 48.0,
+    "proposed_target_retail_msrp": 69.0,
+    "origin_export_packaging_cost": 2.1,
+    "target_channel_strategy": "D2C Localized Storefront + Specialty Roaster Marketplace"
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Hario V60 Ceramic Set 02 (White)",
+      "seller": "Amazon.de Official Store",
+      "price_eur": 54.9,
+      "source_url": "https://www.amazon.de/dp/B000P4D5HG",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "Fellow Stagg [X] Pour-Over Dripper Set",
+      "seller": "The Barn Coffee Roasters Berlin",
+      "price_eur": 89.0,
+      "source_url": "https://thebarn.de/products/fellow-stagg-x-set",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "Kinto Slow Coffee Style 4 Cups Set",
+      "seller": "Coffee Circle Berlin",
+      "price_eur": 72.5,
+      "source_url": "https://www.coffeecircle.com/de/k/kinto-slow-coffee-style",
+      "retrieval_date": "2026-08-28"
+    }
+  ],
+  "sources": [
+    {
+      "title": "German E-Commerce Consumer Trends 2026",
+      "url": "https://www.gtai.de/en/invest/industries/consumer-market-germany",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "title": "German Packaging Register (Zentrale Stelle Verpackungsregister - LUCID)",
+      "url": "https://www.verpackungsregister.org/en/",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "title": "EU One Stop Shop (OSS) VAT Portal",
+      "url": "https://taxation-customs.ec.europa.eu/one-stop-shop_en",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}

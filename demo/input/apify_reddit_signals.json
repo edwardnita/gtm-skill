@@ -1,0 +1,63 @@
+{
+  "actor_metadata": {
+    "actor_id": "trudax/reddit-scraper-lite",
+    "actor_name": "Apify Reddit Fast Scraper",
+    "run_id": "apify-run-20260828-coffee-de",
+    "run_url": "https://api.apify.com/v2/acts/trudax~reddit-scraper-lite/runs/20260828-coffee-de",
+    "dataset_public_url": "https://api.apify.com/v2/datasets/sample-gtm-coffee-de/items?format=json",
+    "retrieval_timestamp": "2026-08-28T17:45:00Z"
+  },
+  "query_parameters": {
+    "query": "specialty coffee pour over ceramic Germany buy",
+    "subreddits": [
+      "r/Coffee",
+      "r/espresso",
+      "r/germany",
+      "r/Kaffee"
+    ],
+    "time_filter": "year",
+    "max_items": 50
+  },
+  "aggregated_metrics": {
+    "total_posts_analyzed": 42,
+    "total_comments_analyzed": 318,
+    "sentiment_distribution": {
+      "positive_pct": 76.5,
+      "neutral_pct": 14.2,
+      "negative_pct": 9.3
+    },
+    "net_sentiment_score": 67.2,
+    "willingness_to_pay_range_eur": {
+      "min": 50.0,
+      "optimal_median": 68.0,
+      "max": 95.0
+    },
+    "key_purchase_drivers": [
+      "Thermal stability and ceramic craftsmanship",
+      "Fast intra-EU shipping without customs hassle",
+      "Clean aesthetic with reusable/recyclable packaging",
+      "Availability of replacement carafes / silicone parts"
+    ],
+    "key_friction_points": [
+      "Severe annoyance with non-EU customs clearance fees on UK/US orders (DHL handling fee \u20ac6 + VAT)",
+      "Strict demand for German language brewing guide / manual",
+      "Expectation of PayPal / Klarna Pay Later at checkout"
+    ]
+  },
+  "sample_scraped_items": [
+    {
+      "source_url": "https://www.reddit.com/r/Coffee/comments/1example1/best_ceramic_pour_over_in_europe_without_us_import/",
+      "title": "Best ceramic pour over available in Europe without US import customs?",
+      "subreddit": "r/Coffee",
+      "upvotes": 87,
+      "summary": "EU coffee enthusiasts actively looking for direct European ceramic brewers to avoid \u00a320+ customs charges from UK/US brands."
+    },
+    {
+      "source_url": "https://www.reddit.com/r/germany/comments/1example2/ordering_coffee_gear_from_eastern_europe/",
+      "title": "Ordering specialty coffee gear from EU roasters/studios",
+      "subreddit": "r/germany",
+      "upvotes": 54,
+      "summary": "Confirmed intra-EU orders from Romania/Poland arrive in 3-4 days via DPD/DHL with zero customs friction and 100% legal compliance."
+    }
+  ]
+}
