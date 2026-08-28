@@ -8,7 +8,7 @@
     "country": "ROU",
     "window_months": 12,
     "since": "20250828",
-    "retrieved_at": "2026-08-28T16:59:49.850Z",
+    "retrieved_at": "2026-08-28T17:09:06.279Z",
     "note": "Live API data at retrieval time. Award sample capped at 100 most recent notices."
   },
   "demand": {
@@ -120,20 +120,10 @@
   },
   "eu_markets": {
     "basis": "contract-notice volume only, same CPV codes and 12-month window",
-    "countries_scanned": 23,
-    "countries_failed": 4,
-    "target_rank": 2,
+    "countries_scanned": 24,
+    "countries_failed": 3,
+    "target_rank": null,
     "top5": [
-      {
-        "country": "POL",
-        "country_name": "Poland",
-        "contract_notices": 1061
-      },
-      {
-        "country": "ROU",
-        "country_name": "Romania",
-        "contract_notices": 152
-      },
       {
         "country": "DEU",
         "country_name": "Germany",
@@ -148,6 +138,16 @@
         "country": "GRC",
         "country_name": "Greece",
         "contract_notices": 90
+      },
+      {
+        "country": "BEL",
+        "country_name": "Belgium",
+        "contract_notices": 62
+      },
+      {
+        "country": "PRT",
+        "country_name": "Portugal",
+        "contract_notices": 53
       }
     ]
   },

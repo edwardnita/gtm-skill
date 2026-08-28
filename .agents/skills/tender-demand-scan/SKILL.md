@@ -15,22 +15,12 @@ A product/service description and one target EU country, given in the prompt or 
 2. Map the product/service description to 1–3 CPV codes (the EU procurement taxonomy). Prefer one division-level code (e.g. `72000000` for IT services) plus at most two narrower ones. Write the mapping down — it must appear in the report so it can be challenged.
 3. Convert the country to ISO3 (Romania → ROU) and run, from the repository root:
 
-   `node .agents/skills/tender-demand-scan/scripts/ted-fetch.mjs --cpv <codes,comma-separated> --country <ISO3> --months 12`
+   `node .agents/skills/tender-demand-scan/scripts/ted-fetch.mjs --cpv <codes,comma-separated> --country <ISO3> --months 12 --report report.html --product "<product label>" --country-name "<Country>" --mapping "<one sentence: which CPV codes you chose and what they cover>"`
 
-   The script queries the live TED API (no key needed), prints one JSON document, and computes the four sub-scores deterministically. Do not recompute or adjust the scores.
+   The script queries the live TED API (no key needed), prints one JSON document, computes the four sub-scores, and renders the full HTML report deterministically from `references/report-template.html` — no step of the output is improvised. Do not recompute scores or rewrite the report by hand. Use another `--report` path only if the prompt names one.
 4. If the script exits non-zero, the most common cause is a sandbox blocking network access, not the API being down: re-run the command once with network access enabled (approve or escalate the permission prompt if the environment asks). Only if that also fails, report "TED API unreachable — no result" and stop. Never invent counts, winners, or values. If a committed fallback report exists (`demo/output/`), point the user to it and say clearly that it is a snapshot, not live data.
-5. Read the JSON and derive:
-   - Verdict from `score.total`: 80–100 "Strong signal", 55–79 "Promising signal", 30–54 "Weak signal", 1–29 "Minimal signal", 0 "Insufficient evidence".
-   - Score color: total ≥ 70 → `#0e8345`, 35–69 → `#b54708`, < 35 → `#b42318`.
-   - One headline finding in plain language, using only numbers present in the JSON.
-6. Copy `references/report-template.html` (next to this file), delete its leading instruction comment, and replace every `{{TOKEN}}` and every `data-fill` tbody with real rows from the JSON:
-   - Bar widths: `PCT_* = points / 25 * 100`. The `WHY_*` lines quote the underlying number (e.g. "733 contract notices in 12 months").
-   - `VALUE_SUMMARY`: format the per-currency `sum` values compactly (e.g. "1.73 bn RON + 244 m EUR"); `AVG_VALUE`: the per-currency `average` values, same format.
-   - Every table row keeps its source: examples link to their `url`; buyer/winner tables state they come from the award-notice sample.
-   - The "Where else in the EU" table comes from `eu_markets.top5`; its fine print states the basis (contract-notice volume only), how many of the 27 countries were scanned, and the target country's rank. If the scan partially failed, say so — never fill missing countries from memory.
-   - Fill the scoring-band lines from `score_bands` verbatim. `EXTRA_LIMITATION`: state the honest one for this run (e.g. broad CPV mapping, small sample). For product CPVs, note that matches include bundled tenders — the product may be one component of a larger project, and published values cover the whole bundle.
-7. Write the finished report to `report.html` at the repository root, unless the prompt names another output path. Leave no `{{TOKEN}}` unreplaced.
-8. Print: the output path, the score line (`total/100 — verdict`), and a 3-row text summary (demand count, top buyer, top winner) so the result is visible without opening the file.
+5. Verify the render: the script prints `REPORT written to <path> — <total>/100 <verdict>` and fails loudly if any template token is left unreplaced. Confirm the file exists. Do not edit the generated HTML; if something looks wrong, fix the inputs and re-run.
+6. Print: the output path, the score line (`total/100 — verdict` — verdicts: 80–100 Strong, 55–79 Promising, 30–54 Weak, 1–29 Minimal, 0 Insufficient evidence), and a 3-row text summary from the JSON (demand count, top buyer, top winner) so the result is visible without opening the file. If `eu_markets.target_rank` exists, mention it in one sentence.
 
 ## Rules
 

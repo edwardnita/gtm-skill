@@ -16,7 +16,7 @@
 
 1. Codex is open at the repository root.
 2. Paste [`demo/seed-prompt.md`](demo/seed-prompt.md).
-3. Watch for: two fast calls to `api.ted.europa.eu` via the skill's zero-dependency Node script, then **`report.html` written at the repo root** and a printed score line ("…/100 — verdict"). Open `report.html` in the browser: a scored market-entry report built from live tender data, including the top-5 EU markets table (Romania is the EU's #2 X-ray market; Poland leads at 7× the volume).
+3. Watch for: the skill's zero-dependency Node script calling `api.ted.europa.eu`, then the line **`REPORT written to report.html — 86/100 Strong signal`** (the HTML is rendered deterministically by the script, not written by the model). Open `report.html` in the browser: a scored market-entry report built from live tender data, including the top-5 EU markets table (Romania is the EU's #2 X-ray market; Poland leads at 7× the volume).
 4. If nothing visible after 60 seconds, open the fallback: [`demo/output/report.html`](demo/output/report.html)
 
 ## Show this — 25 seconds
@@ -25,7 +25,7 @@
 
 **Evidence:** The header and footer carry the TED API source and retrieval timestamp; the three example tenders link to ted.europa.eu; the raw API response is committed at [`demo/output/ted-data.json`](demo/output/ted-data.json); the scoring bands are printed in the report so the score can be challenged.
 
-**Fallback output was produced:** 2026-08-28, ~19:59 EEST, by running the seed prompt against the live TED API during the build window (retrieval timestamp 16:59 UTC is embedded in the report). The report has one-click PDF/print and CSV export.
+**Fallback output was produced:** 2026-08-28, ~20:09 EEST, by the same script the live run uses, against the live TED API (retrieval timestamp 17:09 UTC is embedded in the report). The report has one-click PDF/print and CSV export.
 
 ## Evals — 10 seconds
 

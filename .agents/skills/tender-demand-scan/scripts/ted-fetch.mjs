@@ -4,7 +4,13 @@
 // Zero dependencies. Node >= 18 (built-in fetch).
 //
 // Usage: node ted-fetch.mjs --cpv 72000000[,72200000] --country ROU [--months 12]
-// Prints one JSON document to stdout. Exits 1 with a plain error line on failure.
+//          [--report report.html --product "label" [--country-name "Romania"] [--mapping "how CPV was chosen"]]
+// Prints one JSON document to stdout. With --report it ALSO renders references/report-template.html
+// deterministically into the given path — no LLM writes any HTML. Exits 1 with a plain error line on failure.
+
+import { fileURLToPath } from "node:url";
+import { readFileSync as readFile, writeFileSync } from "node:fs";
+import { dirname as dirName, join as joinPath } from "node:path";
 
 const API = "https://api.ted.europa.eu/v3/notices/search";
 
@@ -174,7 +180,7 @@ try {
   };
   score.total = score.demand_volume + score.buyer_diversity + score.winner_openness + score.recency;
 
-  console.log(JSON.stringify({
+  const out = {
     meta: {
       source: "TED — Tenders Electronic Daily (official EU procurement journal)",
       api: API,
@@ -196,8 +202,79 @@ try {
       winner_openness: "top winner share of sampled awards: no awards=0, >75%=5, 50-75%=10, 25-50%=18, <25%=25",
       recency: "days since latest contract notice: none=0, >180=5, 61-180=12, 31-60=18, <=30=25",
     },
-  }, null, 2));
+  };
+  console.log(JSON.stringify(out, null, 2));
+
+  const reportPath = arg("report");
+  if (reportPath) renderReport(out, reportPath);
 } catch (e) {
   console.error(`ERROR: ${e.message}. TED API may be unreachable; do not invent results — use the committed fallback and say so.`);
   process.exit(1);
+}
+
+// ---- deterministic report rendering (--report) ---------------------------------------
+function renderReport(out, reportPath) {
+  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  const money = (v, c) => (v >= 1e9 ? `${(v / 1e9).toFixed(2)} bn ${c}` : v >= 1e6 ? `${(v / 1e6).toFixed(2)} m ${c}` : `${(v / 1e3).toFixed(0)} k ${c}`);
+  const product = arg("product") ?? `CPV ${out.meta.cpv.join(", ")}`;
+  const countryName = arg("country-name") ?? out.meta.country;
+  const mapping = arg("mapping") ?? `CPV ${out.meta.cpv.join(", ")}, selected by the agent from the product description`;
+
+  const s = out.score;
+  const total = s.total;
+  const verdict = total >= 80 ? "Strong signal" : total >= 55 ? "Promising signal" : total >= 30 ? "Weak signal" : total >= 1 ? "Minimal signal" : "Insufficient evidence";
+  const color = total >= 70 ? "#0e8345" : total >= 35 ? "#b54708" : "#b42318";
+  const aw = out.awards, dm = out.demand, eu = out.eu_markets;
+  const tw = aw.top_winners[0];
+  const valsEntries = Object.entries(aw.awarded_value_by_currency_in_sample).sort((a, b) => b[1].sum - a[1].sum);
+  const valueSummary = valsEntries.map(([c, v]) => money(v.sum, c)).join(" + ") || "none published";
+  const avgValue = valsEntries.map(([c, v]) => money(v.average, c)).join(" + ") || "n/a";
+  const retrieved = out.meta.retrieved_at.slice(0, 16).replace("T", " ") + " UTC";
+  const since = `${out.meta.since.slice(0, 4)}-${out.meta.since.slice(4, 6)}-${out.meta.since.slice(6)}`;
+  const euRank = eu?.target_rank ? ` — the #${eu.target_rank} volume among ${eu.countries_scanned} EU countries scanned (${esc(eu.top5[0]?.country_name)} leads with ${eu.top5[0]?.contract_notices})` : "";
+
+  const tokens = {
+    PRODUCT: esc(product), COUNTRY_NAME: esc(countryName), COUNTRY_ISO3: out.meta.country,
+    CPV_LIST: out.meta.cpv.join(", "), MONTHS: String(out.meta.window_months),
+    RETRIEVED_AT: retrieved, SINCE_DATE: since, API_URL: "api.ted.europa.eu/v3/notices/search",
+    SCORE_TOTAL: String(total), SCORE_COLOR: color, SCORE_VERDICT: verdict,
+    S_DEMAND: String(s.demand_volume), PCT_DEMAND: String(s.demand_volume * 4),
+    S_BUYERS: String(s.buyer_diversity), PCT_BUYERS: String(s.buyer_diversity * 4),
+    S_OPEN: String(s.winner_openness), PCT_OPEN: String(s.winner_openness * 4),
+    S_RECENCY: String(s.recency), PCT_RECENCY: String(s.recency * 4),
+    WHY_DEMAND: `${dm.contract_notices} contract notices in the last ${out.meta.window_months} months`,
+    WHY_BUYERS: `${aw.distinct_buyers_in_sample} distinct authorities in the ${aw.sample_size}-notice award sample`,
+    WHY_OPEN: tw ? `top winner holds ${Math.round((tw.wonNotices / aw.sample_size) * 100)}% of sampled awards (${tw.wonNotices}/${aw.sample_size})` : "no awards in sample",
+    WHY_RECENCY: dm.days_since_latest == null ? "no contract notices in window" : `latest contract notice published ${dm.days_since_latest} day(s) ago`,
+    HEADLINE_FINDING: dm.contract_notices === 0
+      ? `No calls for tender matching ${esc(product)} were published in ${esc(countryName)} in the window — insufficient evidence for a signal. The market may still exist below the EU publication threshold.`
+      : `${esc(countryName)} published <strong>${dm.contract_notices} calls for tender</strong> for ${esc(product)} in the last ${out.meta.window_months} months${euRank}. The ${aw.sample_size} most recent awards total <strong>≈ ${valueSummary}</strong> across ${aw.distinct_buyers_in_sample} different buyers${tw ? `; the busiest winner (${esc(tw.name)}) took ${tw.wonNotices} of ${aw.sample_size} sampled awards` : ""}.`,
+    DEMAND_NARRATIVE: `${dm.contract_notices} contract notices (calls for tender) and ${aw.award_notices} award notices were published in the window${dm.recent_examples[0] ? `, the most recent on ${dm.recent_examples[0].date}` : ""}.${aw.top_buyers[0] ? ` The most frequent buyers in the award sample: ${aw.top_buyers.slice(0, 3).map((b) => esc(b.name)).join("; ")}.` : ""}`,
+    SAMPLE_SIZE: String(aw.sample_size), VALUE_SUMMARY: `≈ ${valueSummary}`, AVG_VALUE: `≈ ${avgValue}`,
+    CPV_MAPPING_EXPLANATION: esc(mapping),
+    BAND_DEMAND: out.score_bands.demand_volume, BAND_BUYERS: out.score_bands.buyer_diversity,
+    BAND_OPEN: out.score_bands.winner_openness, BAND_RECENCY: out.score_bands.recency,
+    EXTRA_LIMITATION: "<strong>Values:</strong> awarded values are summed per currency over the sampled award notices only; framework agreements may publish ceiling values, and product CPVs can match bundled tenders where the value covers the whole project.",
+    EU_NOTE: eu && eu.top5.length
+      ? `Ranked by ${esc(eu.basis)}. Scanned ${eu.countries_scanned} of 27 EU countries${eu.countries_failed ? ` (${eu.countries_failed} unreachable this run)` : ""}${eu.target_rank ? `; the target country ranks #${eu.target_rank} overall` : ""}. A full per-country signal needs its own scan.`
+      : "EU-wide scan unavailable this run; per-country ranking omitted rather than estimated.",
+  };
+
+  let t = readFile(joinPath(dirName(fileURLToPath(import.meta.url)), "..", "references", "report-template.html"), "utf8");
+  t = t.replace(/<!-- Template for \$tender-demand-scan[\s\S]*?-->\n/, "");
+  for (const [k, v] of Object.entries(tokens)) t = t.replaceAll(`{{${k}}}`, v);
+  const fills = {
+    buyers: aw.top_buyers.map((x) => `<tr><td>${esc(x.name)}</td><td class="num">${x.notices}</td></tr>`),
+    winners: aw.top_winners.map((x) => `<tr><td>${esc(x.name)}</td><td class="num">${x.wonNotices}</td></tr>`),
+    examples: dm.recent_examples.map((x) => `<tr><td><a href="${x.url}">${esc((x.title ?? "").slice(0, 160))}</a></td><td>${esc(x.buyer)}</td><td class="num">${x.date}</td></tr>`),
+    markets: (eu?.top5 ?? []).map((r, i) => `<tr><td class="num">${i + 1}</td><td>${esc(r.country_name)}${r.country === out.meta.country ? " — target" : ""}</td><td class="num">${r.contract_notices}</td></tr>`),
+  };
+  for (const [key, rows] of Object.entries(fills)) {
+    const body = rows.length ? rows.join("\n        ") : `<tr><td colspan="3" class="fine">none in this run</td></tr>`;
+    t = t.replace(new RegExp(`(<tbody data-fill="${key}">)[\\s\\S]*?(</tbody>)`), `$1\n        ${body}\n      $2`);
+  }
+  const leftover = t.match(/\{\{[A-Z_]+\}\}/g);
+  if (leftover) throw new Error(`unreplaced template tokens: ${leftover.join(", ")}`);
+  writeFileSync(reportPath, t);
+  console.error(`REPORT written to ${reportPath} — ${total}/100 ${verdict}`);
 }
