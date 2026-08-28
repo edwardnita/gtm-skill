@@ -44,13 +44,22 @@ async function search(extra, fields, limit) {
   const query =
     `(classification-cpv IN (${cpvs.join(" ")})) AND (place-of-performance IN (${country}))` +
     ` AND (publication-date>=${sinceStr})${extra} SORT BY publication-date DESC`;
-  const res = await fetch(API, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query, fields, limit }),
-  });
-  if (!res.ok) throw new Error(`TED API returned HTTP ${res.status}`);
-  return res.json();
+  let lastErr;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, fields, limit }),
+      });
+      if (!res.ok) throw new Error(`TED API returned HTTP ${res.status}`);
+      return await res.json();
+    } catch (e) {
+      lastErr = e;
+      if (attempt < 3) await new Promise((r) => setTimeout(r, attempt * 700));
+    }
+  }
+  throw lastErr;
 }
 
 function band(value, steps) {
@@ -103,8 +112,8 @@ try {
 
   // Deterministic 0-100 heuristic: four sub-scores of 25. Bands are stated, not tuned.
   const score = {
-    demand_volume: band(demandCount, [[50, 25], [15, 18], [5, 12], [1, 6]]),
-    buyer_diversity: band(buyers.size, [[10, 25], [5, 18], [2, 10], [1, 5]]),
+    demand_volume: band(demandCount, [[200, 25], [50, 18], [10, 12], [1, 6]]),
+    buyer_diversity: band(buyers.size, [[25, 25], [10, 18], [2, 10], [1, 5]]),
     winner_openness: topShare == null ? 0 : band(1 - topShare, [[0.75, 25], [0.5, 18], [0.25, 10], [0, 5]]),
     recency: daysSinceLatest == null ? 0 : band(-daysSinceLatest, [[-30, 25], [-60, 18], [-180, 12], [-99999, 5]]),
   };
@@ -126,8 +135,8 @@ try {
     },
     score,
     score_bands: {
-      demand_volume: "contract notices in window: 0=0, 1-4=6, 5-14=12, 15-49=18, 50+=25",
-      buyer_diversity: "distinct buyers in award sample: 0=0, 1=5, 2-4=10, 5-9=18, 10+=25",
+      demand_volume: "contract notices in window: 0=0, 1-9=6, 10-49=12, 50-199=18, 200+=25",
+      buyer_diversity: "distinct buyers in award sample: 0=0, 1=5, 2-9=10, 10-24=18, 25+=25",
       winner_openness: "top winner share of sampled awards: no awards=0, >75%=5, 50-75%=10, 25-50%=18, <25%=25",
       recency: "days since latest contract notice: none=0, >180=5, 61-180=12, 31-60=18, <=30=25",
     },
