@@ -31,10 +31,10 @@
 - [x] Task 3.3: Phase 3 Verification & Skill Execution Checkpoint
 
 ## Phase 4: Evals, Seed Prompt, Fallback & Submission Validation
-- [ ] Task 4.1: Write `demo/seed-prompt.md` with exact cold-run jury prompt
-- [ ] Task 4.2: Execute cold run and generate genuine fallback output in `demo/output/expansion_brief.md`
-- [ ] Task 4.3: Execute and document the 3 eval cases in `demo/evals.md` (Intended, Insufficient Evidence, Kill Trigger Exclusion)
-- [ ] Task 4.4: Complete `DEMO.md` presentation run sheet (Problem, Live capability, Result, Limitations)
-- [ ] Task 4.5: Populate `submission.json` manifest with all artifact paths and metadata
-- [ ] Task 4.6: Run `$skillathon-submit` validation check script and ensure all automated gates pass
-- [ ] Task 4.7: Phase 4 Verification & Track Completion Checkpoint
+- [x] Task 4.1: Write `demo/seed-prompt.md` with exact cold-run jury prompt
+- [x] Task 4.2: Execute cold run and generate genuine fallback output in `demo/output/expansion_brief.md`
+- [x] Task 4.3: Execute and document the 3 eval cases in `demo/evals.md` (Intended, Insufficient Evidence, Kill Trigger Exclusion)
+- [x] Task 4.4: Complete `DEMO.md` presentation run sheet (Problem, Live capability, Result, Limitations)
+- [x] Task 4.5: Populate `submission.json` manifest with all artifact paths and metadata
+- [x] Task 4.6: Run `$skillathon-submit` validation check script and ensure all automated gates pass
+- [x] Task 4.7: Phase 4 Verification & Track Completion Checkpoint

@@ -1,0 +1,29 @@
+{
+  "request_id": "EXP-EVAL-KILL-TRIGGER-02",
+  "product_name": "Uncertified Artisanal Glaze Mug",
+  "brand": "Hazard Brand",
+  "origin_country": "RO",
+  "target_country": "DE",
+  "category": "specialty_coffee_brewing_equipment",
+  "specifications": {
+    "weight_grams": 400,
+    "materials": [
+      "Lead-based decorative enamel glaze ceramic",
+      "Plastic"
+    ],
+    "food_contact_compliance": "None"
+  },
+  "financials": {
+    "unit_cogs_ex_factory": 8.0,
+    "proposed_target_retail_msrp": 25.0,
+    "origin_export_packaging_cost": 1.5
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Local Mug",
+      "price_eur": 24.0,
+      "source_url": "https://example.com/mug",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}
