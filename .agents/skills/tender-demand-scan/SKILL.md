@@ -27,7 +27,7 @@ A product/service description and one target EU country, given in the prompt or 
    - Bar widths: `PCT_* = points / 25 * 100`. The `WHY_*` lines quote the underlying number (e.g. "733 contract notices in 12 months").
    - `VALUE_SUMMARY`: format the per-currency `sum` values compactly (e.g. "1.73 bn RON + 244 m EUR"); `AVG_VALUE`: the per-currency `average` values, same format.
    - Every table row keeps its source: examples link to their `url`; buyer/winner tables state they come from the award-notice sample.
-   - Fill the scoring-band lines from `score_bands` verbatim. `EXTRA_LIMITATION`: state the honest one for this run (e.g. broad CPV mapping, small sample).
+   - Fill the scoring-band lines from `score_bands` verbatim. `EXTRA_LIMITATION`: state the honest one for this run (e.g. broad CPV mapping, small sample). For product CPVs, note that matches include bundled tenders — the product may be one component of a larger project, and published values cover the whole bundle.
 7. Write the finished report to `report.html` at the repository root, unless the prompt names another output path. Leave no `{{TOKEN}}` unreplaced.
 8. Print: the output path, the score line (`total/100 — verdict`), and a 3-row text summary (demand count, top buyer, top winner) so the result is visible without opening the file.
 

@@ -37,6 +37,6 @@
 
 ## Close — 5 seconds
 
-**Reusable on:** any product/service × any EU/EEA country, unchanged — verified during the event on Poland (5,418 notices, score 100) with the same skill and script.
+**Reusable on:** any product/service × any EU/EEA country, unchanged — verified during the event on Poland (score 100, 5,418 notices) and on 20 further product/service × country runs. If asked "does it always say 100?": the scores ranged 0–100 (ambulances 52, drone equipment 67, X-ray devices 86, laptops 100…), and the fixed scoring bands are printed in every report.
 
-**Material limitation:** TED only lists above-EU-threshold tenders; smaller national tenders (e.g. Romania's SICAP-only procedures) are not counted — so demand is understated, never overstated, and awarded values can be framework ceilings rather than actual spend.
+**Material limitation:** TED only lists above-EU-threshold tenders; smaller national tenders (e.g. Romania's SICAP-only procedures) are not counted — so demand is understated, never overstated, and awarded values can be framework ceilings or whole-bundle totals rather than the product's own slice. Scraping national portals (e.g. SICAP, via an Apify actor) is the natural next step.
