@@ -1,0 +1,30 @@
+{
+  "actor_metadata": {
+    "actor_id": "trudax/reddit-scraper-lite",
+    "run_id": "apify-run-20260828-coffee-br",
+    "retrieval_timestamp": "2026-08-28T18:00:00Z"
+  },
+  "aggregated_metrics": {
+    "total_posts_analyzed": 28,
+    "total_comments_analyzed": 194,
+    "sentiment_distribution": {
+      "positive_pct": 18.0,
+      "neutral_pct": 14.0,
+      "negative_pct": 68.0
+    },
+    "net_sentiment_score": -50.0,
+    "willingness_to_pay_range_eur": {
+      "min": 25.0,
+      "optimal_median": 40.0,
+      "max": 55.0
+    },
+    "key_purchase_drivers": [
+      "Local domestic roasters support"
+    ],
+    "key_friction_points": [
+      "Taxa das blusinhas / 60% import tax renders international purchases prohibitive",
+      "Curitiba customs clearance takes 3-6 weeks with frequent package seizures",
+      "Refusal to buy without local Pix / Boleto Bancario payments"
+    ]
+  }
+}

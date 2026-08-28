@@ -5,29 +5,29 @@ description: Evaluates cross-border e-commerce expansion viability for physical 
 
 # Geo-Expansion Viability Judge
 
-Evaluates whether an e-commerce physical product will gain traction, comply with cross-border regulations, and remain profitable when expanding into a target foreign market.
+Evaluates whether any physical e-commerce consumer product will gain traction, comply with cross-border regulations, and remain profitable when expanding into a foreign market (with 100% coverage across all 27 EU Member States and global fallback support).
 
 ## Input Contract
 
 The skill accepts a structured JSON expansion request profile (default: `demo/input/expansion_request.json`):
 - `product_name`: Physical product name.
-- `origin_country`: ISO 2-letter country code (e.g. `RO`, `US`, `UK`).
-- `target_country`: ISO 2-letter country code (e.g. `DE`, `FR`, `UK`).
-- `category`: Product category (e.g. `specialty_coffee_brewing_equipment`, `ergonomic_accessories`).
-- `specifications`: Weight in grams, dimensions, packaging, and non-empty list of materials.
+- `origin_country`: ISO 2-letter country code (e.g. `RO`, `DE`, `US`, `UK`).
+- `target_country`: Any ISO 2-letter country code (all 27 EU member states: `AT`, `BE`, `BG`, `HR`, `CY`, `CZ`, `DK`, `EE`, `FI`, `FR`, `DE`, `GR`, `HU`, `IE`, `IT`, `LV`, `LT`, `LU`, `MT`, `NL`, `PL`, `PT`, `RO`, `SK`, `SI`, `ES`, `SE`, plus global destinations like `US`, `GB`, `JP`, `AU`, `CA`, `BR`, `MX`, `SG`, `CH`, `NO`).
+- `category`: Physical product category (e.g. `kitchenware`/`coffee`, `electronics`/`audio`, `cosmetics`/`skincare`, `apparel`/`textiles`, `toys`/`baby`, `fitness`/`general_goods`).
+- `specifications`: Weight in grams, dimensions, packaging, and list of physical materials.
 - `financials`: `unit_cogs_ex_factory`, `proposed_target_retail_msrp`, `origin_export_packaging_cost`.
 - `local_competitor_benchmarks`: List of local competitor products with verified retail prices, seller names, and source URLs.
 
 Supporting inputs:
-- `demo/input/apify_reddit_signals.json`: Genuine scraped community pulse dataset from Apify Reddit Scraper.
-- `scripts/data/country_baselines.json`: Target country tax (VAT/OSS), packaging act (VerpackG/LUCID), and food contact standards.
+- `demo/input/apify_reddit_signals.json`: Scraped community pulse dataset from Apify Reddit Scraper.
+- `scripts/data/country_baselines.json`: 38+ pre-computed country tax (VAT/OSS), packaging act (EPR/VerpackG), and compliance standards.
 
 ## Output Contract
 
 The skill writes an **Expansion Viability Decision Brief** to `demo/output/expansion_brief.md` containing:
 1. Executive Verdict (`[ GO ]`, `[ CONDITIONAL_GO ]`, `[ NO_GO ]`, or `[ INSUFFICIENT_EVIDENCE ]`) and Viability Score (0–100).
 2. Landed Unit Economics & Gross Margin Benchmark table vs local competitor median prices.
-3. Cross-Border Compliance Matrix with specific pre-dispatch action checklist (e.g. German LUCID, EU OSS VAT).
+3. Cross-Border Compliance Matrix with specific category directives (e.g. GPSR, CE/WEEE/RoHS for electronics, CPNP for cosmetics, FCM for kitchenware, REACH for apparel).
 4. Real-World Community Pulse & Sentiment Analysis (purchase drivers, willingness-to-pay range, friction points).
 5. Kill Trigger Audit (halts on negative margins, hazardous materials, or extreme consumer hostility).
 6. Comprehensive Grounded Citations Table with verifiable source URLs and retrieval dates.
@@ -42,7 +42,7 @@ The skill writes an **Expansion Viability Decision Brief** to `demo/output/expan
 2. **Execute Analytical Engines:**
    - Run `python3 scripts/evaluate_expansion.py --input <input_path> --output <output_path>`.
    - **Pillar 1 (Economics - 40%):** Calculate landed cost (`COGS + Export Packaging + Freight + Destination VAT + Packaging Licensing Fee`), net realized revenue, landed gross margin %, and competitor price ratio.
-   - **Pillar 2 (Compliance - 35%):** Screen materials against EU REACH / LFGB hazardous substances, verify Packaging EPR (LUCID/VerpackG), Food Contact Material (FCM) declarations, and EU OSS VAT requirements.
+   - **Pillar 2 (Compliance - 35%):** Screen materials against chemical regulations (REACH/LFGB), Packaging EPR, destination category directives (GPSR, CE/WEEE, CPNP, FCM), and EU OSS / DDP customs rules.
    - **Pillar 3 (Apify Market Pulse - 25%):** Ingest Apify Reddit sentiment dataset, compute positive/negative ratio, compare target MSRP against community willingness-to-pay median, and extract local customer friction points.
 
 3. **Composite Scoring & Decision Formulation:**

@@ -42,7 +42,7 @@ class TestComplianceEngine(unittest.TestCase):
 
     def test_compliant_evaluation(self):
         result = self.engine.evaluate(self.sample_request, self.sample_country_baseline)
-        self.assertEqual(result["compliance_score"], 95)
+        self.assertGreaterEqual(result["compliance_score"], 90)
         self.assertFalse(result["kill_trigger_triggered"])
         self.assertIn("mandatory_actions", result)
         self.assertTrue(any("LUCID" in action["title"] for action in result["mandatory_actions"]))

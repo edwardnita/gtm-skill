@@ -1,0 +1,61 @@
+{
+  "request_id": "EXP-20260828-RO-BR-COFFEE",
+  "product_name": "Carpathian Artisan Ceramic Pour-Over Coffee Kit",
+  "brand": "Carpathian Craft Coffee Lab",
+  "origin_country": "RO",
+  "target_country": "BR",
+  "target_market_region": "Latin America (Cross-Border)",
+  "category": "specialty_coffee_brewing_equipment",
+  "specifications": {
+    "weight_grams": 650,
+    "dimensions_cm": {
+      "length": 14.0,
+      "width": 14.0,
+      "height": 16.5
+    },
+    "materials": [
+      "High-fired thermal ceramic dripper",
+      "Borosilicate heat-resistant glass carafe (500ml)",
+      "BPA-free food-grade silicone collar/base",
+      "Recycled kraft cardboard packaging"
+    ],
+    "food_contact_compliance": "EU EC 1935/2004 only (No INMETRO certification)",
+    "electrical_components": false
+  },
+  "financials": {
+    "currency": "EUR",
+    "unit_cogs_ex_factory": 14.5,
+    "current_home_retail_price": 48.0,
+    "proposed_target_retail_msrp": 69.0,
+    "origin_export_packaging_cost": 2.1,
+    "target_channel_strategy": "Direct Cross-Border D2C"
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Hario V60 Ceramic 02 (Mercado Livre Brasil)",
+      "seller": "Mercado Livre Official",
+      "price_eur": 45.0,
+      "source_url": "https://www.mercadolivre.com.br/hario-v60",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "Pressca Cafeteira Portatil Brasil",
+      "seller": "Pressca Brasil Store",
+      "price_eur": 32.0,
+      "source_url": "https://www.pressca.com.br/",
+      "retrieval_date": "2026-08-28"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Receita Federal do Brasil - Programa Remessa Conforme",
+      "url": "https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/importacao/remessa-conforme",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "title": "INMETRO Kitchenware and Ceramic Testing Standards",
+      "url": "http://www.inmetro.gov.br/legislacao/rtac/pdf/RTAC002773.pdf",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}

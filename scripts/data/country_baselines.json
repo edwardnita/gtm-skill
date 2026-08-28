@@ -1,52 +1,396 @@
 {
-  "DE": {
-    "country_name": "Germany",
+  "AT": {
+    "country_name": "Austria",
     "region": "EU",
     "currency": "EUR",
-    "standard_vat_rate": 0.19,
-    "reduced_vat_rate": 0.07,
+    "standard_vat_rate": 0.2,
     "eu_oss_applicable": true,
     "packaging_compliance": {
-      "framework": "VerpackG (German Packaging Act)",
-      "register": "LUCID (Zentrale Stelle Verpackungsregister)",
+      "framework": "VerpackVO (ARA)",
+      "register": "Austria National EPR Register",
       "dual_system_mandatory": true,
       "estimated_annual_fee_eur": 45.0,
       "per_unit_packaging_fee_eur": 0.08,
-      "reference_url": "https://www.verpackungsregister.org/en/"
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
     },
     "food_contact_compliance": {
-      "framework": "EU EC 1935/2004 & German LFGB \u00a7\u00a7 30, 31",
+      "framework": "EU EC 1935/2004 & National Standards",
       "declaration_required": true,
       "declaration_type": "Declaration of Compliance (DoC)",
-      "reference_url": "https://www.bfr.bund.de/en/food_contact_materials-231.html"
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
     },
     "logistics_baseline": {
-      "standard_intra_eu_freight_eur": 6.8,
-      "express_intra_eu_freight_eur": 12.5,
-      "typical_delivery_sla_days": "3-4 days (Intra-EU DPD/DHL)",
-      "return_rate_average_pct": 8.5
+      "standard_intra_eu_freight_eur": 6.9,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
     },
     "market_channels": [
       {
-        "name": "Direct Localized D2C (Shopify DE)",
+        "name": "Direct Localized D2C (Shopify AT)",
         "payment_methods": [
-          "PayPal",
+          "Credit Card",
+          "Apple Pay / Google Pay",
           "Klarna",
-          "Sofort / Giropay",
-          "Credit Card"
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
         ]
       },
       {
-        "name": "Specialty Coffee Marketplace / Roaster Partnerships",
+        "name": "Regional / Local Marketplace",
         "payment_methods": [
-          "B2B Invoice (SEPA)",
-          "Credit Card"
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "BE": {
+    "country_name": "Belgium",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Fost Plus",
+      "register": "Belgium National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.2,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify BE)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
         ]
       },
       {
-        "name": "Amazon.de Marketplace (FBA / FBM)",
+        "name": "Regional / Local Marketplace",
         "payment_methods": [
-          "Amazon Pay"
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "BG": {
+    "country_name": "Bulgaria",
+    "region": "EU",
+    "currency": "BGN",
+    "standard_vat_rate": 0.2,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "EcoPack",
+      "register": "Bulgaria National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 5.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify BG)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "HR": {
+    "country_name": "Croatia",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.25,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Fond za za\u0161titu okoli\u0161a",
+      "register": "Croatia National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify HR)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "CY": {
+    "country_name": "Cyprus",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.19,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Green Dot Cyprus",
+      "register": "Cyprus National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 9.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify CY)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "CZ": {
+    "country_name": "Czech Republic",
+    "region": "EU",
+    "currency": "CZK",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "EKO-KOM",
+      "register": "Czech Republic National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.2,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify CZ)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "DK": {
+    "country_name": "Denmark",
+    "region": "EU",
+    "currency": "DKK",
+    "standard_vat_rate": 0.25,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Dansk Retursystem / EPR",
+      "register": "Denmark National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 8.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify DK)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "EE": {
+    "country_name": "Estonia",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.22,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "ETO / TVO",
+      "register": "Estonia National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.8,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify EE)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "FI": {
+    "country_name": "Finland",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.255,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "RINKI",
+      "register": "Finland National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 8.9,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify FI)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
         ]
       }
     ]
@@ -56,24 +400,1247 @@
     "region": "EU",
     "currency": "EUR",
     "standard_vat_rate": 0.2,
-    "reduced_vat_rate": 0.055,
     "eu_oss_applicable": true,
     "packaging_compliance": {
-      "framework": "EPR / ADEME Triman Logo mandatory",
-      "register": "SYDEREP / Citeo",
-      "estimated_annual_fee_eur": 80.0,
-      "per_unit_packaging_fee_eur": 0.1,
-      "reference_url": "https://www.ademe.fr/en/"
+      "framework": "EPR / ADEME Triman (Citeo)",
+      "register": "France National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
     },
     "food_contact_compliance": {
-      "framework": "EU EC 1935/2004 & French DGCCRF",
+      "framework": "EU EC 1935/2004 & National Standards",
       "declaration_required": true,
       "declaration_type": "Declaration of Compliance (DoC)",
-      "reference_url": "https://www.economie.gouv.fr/dgccrf"
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
     },
     "logistics_baseline": {
       "standard_intra_eu_freight_eur": 7.5,
-      "typical_delivery_sla_days": "3-5 days"
-    }
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify FR)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "DE": {
+    "country_name": "Germany",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.19,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "VerpackG (LUCID / ZSVR)",
+      "register": "Germany National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.8,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify DE)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "GR": {
+    "country_name": "Greece",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.24,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "HERRCO",
+      "register": "Greece National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.8,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify GR)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "HU": {
+    "country_name": "Hungary",
+    "region": "EU",
+    "currency": "HUF",
+    "standard_vat_rate": 0.27,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "MOHU EPR",
+      "register": "Hungary National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 5.8,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify HU)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "IE": {
+    "country_name": "Ireland",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.23,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Repak",
+      "register": "Ireland National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 8.2,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify IE)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "IT": {
+    "country_name": "Italy",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.22,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "CONAI Environmental Labeling",
+      "register": "Italy National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.2,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify IT)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "LV": {
+    "country_name": "Latvia",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Latvijas Za\u013cais punkts",
+      "register": "Latvia National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify LV)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "LT": {
+    "country_name": "Lithuania",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "\u017daliasis ta\u0161kas",
+      "register": "Lithuania National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.4,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify LT)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "LU": {
+    "country_name": "Luxembourg",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.17,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Valorlux",
+      "register": "Luxembourg National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.0,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify LU)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "MT": {
+    "country_name": "Malta",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.18,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "GreenPak",
+      "register": "Malta National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 9.2,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify MT)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "NL": {
+    "country_name": "Netherlands",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Afvalfonds Verpakkingen",
+      "register": "Netherlands National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.9,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify NL)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "PL": {
+    "country_name": "Poland",
+    "region": "EU",
+    "currency": "PLN",
+    "standard_vat_rate": 0.23,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "BDO Waste Database",
+      "register": "Poland National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.1,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify PL)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "PT": {
+    "country_name": "Portugal",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.23,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Sociedade Ponto Verde",
+      "register": "Portugal National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 8.1,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify PT)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "RO": {
+    "country_name": "Romania",
+    "region": "EU",
+    "currency": "RON",
+    "standard_vat_rate": 0.19,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "AFM / OIREP",
+      "register": "Romania National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 4.5,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify RO)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "SK": {
+    "country_name": "Slovakia",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.23,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "OZV NATUR-PACK",
+      "register": "Slovakia National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 5.9,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify SK)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "SI": {
+    "country_name": "Slovenia",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.22,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Slopak",
+      "register": "Slovenia National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 6.4,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify SI)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "ES": {
+    "country_name": "Spain",
+    "region": "EU",
+    "currency": "EUR",
+    "standard_vat_rate": 0.21,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "Ecoembes / Plastic Tax",
+      "register": "Spain National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 7.8,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify ES)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "SE": {
+    "country_name": "Sweden",
+    "region": "EU",
+    "currency": "SEK",
+    "standard_vat_rate": 0.25,
+    "eu_oss_applicable": true,
+    "packaging_compliance": {
+      "framework": "N\u00e4ringslivets Producentansvar",
+      "register": "Sweden National EPR Register",
+      "dual_system_mandatory": true,
+      "estimated_annual_fee_eur": 45.0,
+      "per_unit_packaging_fee_eur": 0.08,
+      "reference_url": "https://europa.eu/youreurope/business/product-requirements/waste-management/packaging-waste/index_en.htm"
+    },
+    "food_contact_compliance": {
+      "framework": "EU EC 1935/2004 & National Standards",
+      "declaration_required": true,
+      "declaration_type": "Declaration of Compliance (DoC)",
+      "reference_url": "https://food.ec.europa.eu/safety/chemical-safety/food-contact-materials_en"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 8.6,
+      "typical_delivery_sla_days": "2-4 business days (Intra-EU DPD/DHL)",
+      "return_rate_average_pct": 8.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify SE)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "Klarna",
+          "PayPal",
+          "Sofort / iDEAL / Bancontact / BLIK"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "GB": {
+    "country_name": "United Kingdom",
+    "region": "Europe (Non-EU)",
+    "currency": "GBP",
+    "standard_vat_rate": 0.2,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "UK Packaging Waste Regulations",
+      "register": "United Kingdom National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "United Kingdom Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 16.5,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify GB)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "CH": {
+    "country_name": "Switzerland",
+    "region": "Europe (Non-EU)",
+    "currency": "CHF",
+    "standard_vat_rate": 0.081,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "Swiss Packaging Guidelines",
+      "register": "Switzerland National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Switzerland Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 18.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify CH)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "NO": {
+    "country_name": "Norway",
+    "region": "Europe (Non-EU)",
+    "currency": "NOK",
+    "standard_vat_rate": 0.25,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "Gr\u00f8nt Punkt Norge (VOEC)",
+      "register": "Norway National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Norway Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 19.5,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify NO)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "US": {
+    "country_name": "United States",
+    "region": "North America",
+    "currency": "USD",
+    "standard_vat_rate": 0.085,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "State EPR (CA, OR, CO, ME)",
+      "register": "United States National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "United States Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 24.5,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify US)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "CA": {
+    "country_name": "Canada",
+    "region": "North America",
+    "currency": "CAD",
+    "standard_vat_rate": 0.13,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "Circular Materials Canada",
+      "register": "Canada National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Canada Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 26.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify CA)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "AU": {
+    "country_name": "Australia",
+    "region": "Oceania",
+    "currency": "AUD",
+    "standard_vat_rate": 0.1,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "APCO (Australian Packaging Covenant)",
+      "register": "Australia National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Australia Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 29.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify AU)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "JP": {
+    "country_name": "Japan",
+    "region": "Asia-Pacific",
+    "currency": "JPY",
+    "standard_vat_rate": 0.1,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "Container and Packaging Recycling Law",
+      "register": "Japan National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Japan Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 28.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify JP)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "BR": {
+    "country_name": "Brazil",
+    "region": "Latin America",
+    "currency": "BRL",
+    "standard_vat_rate": 0.92,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "PNRS / SINIR",
+      "register": "Brazil National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Brazil Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 42.5,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify BR)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "MX": {
+    "country_name": "Mexico",
+    "region": "Latin America",
+    "currency": "MXN",
+    "standard_vat_rate": 0.16,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "LGPGIR Mexico",
+      "register": "Mexico National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Mexico Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 31.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify MX)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "SG": {
+    "country_name": "Singapore",
+    "region": "Asia-Pacific",
+    "currency": "SGD",
+    "standard_vat_rate": 0.09,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "NEA Mandatory Packaging Reporting",
+      "register": "Singapore National EPR Register",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 75.0,
+      "per_unit_packaging_fee_eur": 0.12,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Singapore Food Safety Agency Standards",
+      "declaration_required": true,
+      "declaration_type": "Import Safety Declaration",
+      "reference_url": "https://wto.org"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 25.0,
+      "typical_delivery_sla_days": "6-14 business days (International Tracked Parcel)",
+      "return_rate_average_pct": 16.0
+    },
+    "market_channels": [
+      {
+        "name": "Direct Localized D2C (Shopify SG)",
+        "payment_methods": [
+          "Credit Card",
+          "Apple Pay / Google Pay",
+          "PayPal"
+        ]
+      },
+      {
+        "name": "Regional / Local Marketplace",
+        "payment_methods": [
+          "Local Payment Gateway"
+        ]
+      }
+    ]
+  },
+  "GLOBAL_DEFAULT": {
+    "country_name": "International Destination",
+    "region": "Global (Non-EU Cross-Border)",
+    "currency": "USD",
+    "standard_vat_rate": 0.15,
+    "eu_oss_applicable": false,
+    "packaging_compliance": {
+      "framework": "International Waste & Packaging Stewardship",
+      "register": "National Environmental Authority",
+      "dual_system_mandatory": false,
+      "estimated_annual_fee_eur": 60.0,
+      "per_unit_packaging_fee_eur": 0.1,
+      "reference_url": "https://wto.org"
+    },
+    "food_contact_compliance": {
+      "framework": "Codex Alimentarius & National Food Safety Agency",
+      "declaration_required": true,
+      "declaration_type": "International Compliance Declaration",
+      "reference_url": "https://www.fao.org/fao-who-codexalimentarius/en/"
+    },
+    "logistics_baseline": {
+      "standard_intra_eu_freight_eur": 28.0,
+      "typical_delivery_sla_days": "7-18 business days (International Tracked Post)",
+      "return_rate_average_pct": 14.0
+    },
+    "market_channels": [
+      {
+        "name": "Global Direct D2C",
+        "payment_methods": [
+          "Credit Card",
+          "PayPal",
+          "Apple Pay"
+        ]
+      }
+    ]
   }
 }

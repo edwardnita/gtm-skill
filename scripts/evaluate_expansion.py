@@ -123,18 +123,18 @@ def generate_markdown_brief(request: Dict[str, Any], econ: Dict[str, Any], comp:
 
 | Parameter | Value (EUR) | Notes / Percentage of MSRP |
 | :--- | :---: | :--- |
-| **Target Retail MSRP (Gross)** | **€{msrp:.2f}** | Destination price paid by German consumers |
-| Destination VAT (19% German MwSt) | -€{vat:.2f} | 19% via EU One-Stop Shop (OSS) |
+| **Target Retail MSRP (Gross)** | **€{msrp:.2f}** | Destination price paid by {target_name} consumers |
+| Destination VAT ({int(vat*100 if msrp > 0 else 19)}% {target_name} VAT/Import Tax) | -€{vat:.2f} | 19% via EU One-Stop Shop (OSS) |
 | **Net Realized Revenue** | **€{econ['net_revenue_eur']:.2f}** | Revenue net of destination sales tax |
 | Unit Manufacturing COGS | -€{cogs:.2f} | Ex-factory production cost (Romania) |
 | Intra-EU Tracked Freight (DPD/DHL) | -€{freight:.2f} | Standard parcel rate (<1kg RO -> DE) |
 | Export Packaging & Cushioning | -€{econ['packaging_cost_eur']:.2f} | High-durability kraft & cellulose |
-| VerpackG (LUCID) Packaging Fee | -€{pkg_fee:.2f} | German dual system per-unit licensing |
+| VerpackG (LUCID) Packaging Fee | -€{pkg_fee:.2f} | {target_name} packaging compliance per-unit licensing |
 | **Total Landed Cost** | **€{landed_cost:.2f}** | Total landed cost burden |
 | **Net Gross Profit** | **€{gross_profit:.2f}** | **Landed Margin: {margin_pct:.1f}%** |
 
 ### Local Competitive Positioning
-- **German Competitor Median Price:** **€{comp_median:.2f}**
+- **{target_name} Competitor Median Price:** **€{comp_median:.2f}**
 - **Price Index vs. Local Market:** **{price_ratio*100:.1f}%** of competitor median (Priced at a competitive ~€3.50 discount to market median).
 
 ---
@@ -161,7 +161,7 @@ def generate_markdown_brief(request: Dict[str, Any], econ: Dict[str, Any], comp:
 
 ### Critical Market Friction Points & Recommendations:
 {frictions_md}
-- **Required Localization:** Provide German user manual and integrate PayPal/Klarna on checkout.
+- **Required Localization:** Provide {target_name} localized user manual and integrate PayPal/Klarna on checkout.
 
 ---
 
@@ -248,8 +248,8 @@ def main():
     if os.path.exists(args.baselines):
         with open(args.baselines, "r") as f:
             baselines = json.load(f)
-    target_country = request.get("target_country", "DE")
-    target_baseline = baselines.get(target_country, baselines.get("DE", {}))
+    target_country = request.get("target_country", "DE").upper()
+    target_baseline = baselines.get(target_country, baselines.get("GLOBAL_DEFAULT", {}))
 
     sentiment_data = {}
     if os.path.exists(args.sentiment):

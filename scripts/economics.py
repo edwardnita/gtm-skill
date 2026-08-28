@@ -1,4 +1,4 @@
-"""Unit Economics & Landed Cost Benchmark Engine."""
+"""Universal Physical Product Unit Economics & Landed Cost Benchmark Engine."""
 
 import statistics
 from typing import Dict, Any, List
@@ -13,15 +13,25 @@ class EconomicsEngine:
         packaging_cost = float(fin.get("origin_export_packaging_cost", 0.0))
         msrp = float(fin.get("proposed_target_retail_msrp", 0.0))
         
-        vat_rate = float(baseline.get("standard_vat_rate", 0.19))
-        packaging_fee = float(baseline.get("packaging_compliance", {}).get("per_unit_packaging_fee_eur", 0.08))
-        freight = float(baseline.get("logistics_baseline", {}).get("standard_intra_eu_freight_eur", 6.80))
+        specs = request.get("specifications", {})
+        weight_grams = float(specs.get("weight_grams", 500.0))
         
-        # Gross MSRP breakdown: MSRP = Net Revenue * (1 + VAT)
+        vat_rate = float(baseline.get("standard_vat_rate", 0.20))
+        packaging_fee = float(baseline.get("packaging_compliance", {}).get("per_unit_packaging_fee_eur", 0.08))
+        
+        # Base freight calculation (scales with weight)
+        base_freight = float(baseline.get("logistics_baseline", {}).get("standard_intra_eu_freight_eur", 7.00))
+        if weight_grams > 1000.0:
+            weight_factor = 1.0 + ((weight_grams - 1000.0) / 1000.0) * 0.40
+            freight = base_freight * weight_factor
+        else:
+            freight = base_freight
+        
+        # Net revenue calculation: MSRP = Net Revenue * (1 + VAT/Duty)
         net_revenue = msrp / (1.0 + vat_rate) if (1.0 + vat_rate) > 0 else msrp
         vat_amount = msrp - net_revenue
         
-        # Total landed cost including VAT liability
+        # Landed cost
         landed_cost_ex_vat = cogs + packaging_cost + freight + packaging_fee
         total_landed_cost = landed_cost_ex_vat + vat_amount
         
@@ -34,8 +44,7 @@ class EconomicsEngine:
         competitor_median = statistics.median(prices) if prices else msrp
         price_to_median_ratio = (msrp / competitor_median) if competitor_median > 0 else 1.0
         
-        # Score calculation (0-100)
-        # Margin thresholds: >50% -> 100, 35-50% -> 70, 20-34% -> 40, <20% -> 0
+        # Margin scoring: >50% -> 100, 35-50% -> 70, 20-34% -> 40, <20% -> 0
         kill_trigger = False
         kill_reason = None
         
@@ -50,8 +59,7 @@ class EconomicsEngine:
             kill_trigger = True
             kill_reason = f"Landed gross margin ({landed_margin_pct:.1f}%) is below the minimum viable 20.0% threshold."
             
-        # Price competitiveness penalty/bonus
-        # If priced > 30% above competitor median, apply penalty
+        # Price competitiveness penalty
         if price_to_median_ratio > 1.30:
             economics_score = max(0, margin_score - 20)
         else:
