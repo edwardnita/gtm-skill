@@ -1,0 +1,54 @@
+{
+  "request_id": "EXP-20260828-FR-GB-SKIN",
+  "product_name": "Provence Botanical Glow Facial Serum (30ml)",
+  "brand": "Maison Botanique Provence",
+  "origin_country": "FR",
+  "target_country": "GB",
+  "target_market_region": "United Kingdom (Non-EU)",
+  "category": "cosmetics_skincare_organic",
+  "specifications": {
+    "weight_grams": 120,
+    "dimensions_cm": {
+      "length": 4.5,
+      "width": 4.5,
+      "height": 11.0
+    },
+    "materials": [
+      "Amber glass bottle",
+      "Organic rosehip oil serum",
+      "Glass dropper",
+      "FSC kraft box"
+    ],
+    "electrical_components": false
+  },
+  "financials": {
+    "currency": "EUR",
+    "unit_cogs_ex_factory": 8.5,
+    "proposed_target_retail_msrp": 45.0,
+    "origin_export_packaging_cost": 1.2,
+    "target_channel_strategy": "D2C Direct (Shopify UK)"
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Pai Skincare Rosehip Serum (Boots UK)",
+      "seller": "Boots Direct",
+      "price_eur": 49.0,
+      "source_url": "https://www.boots.com/pai-skincare",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "The Ordinary Rose Hip Seed Oil (Space NK)",
+      "seller": "Space NK",
+      "price_eur": 38.0,
+      "source_url": "https://www.spacenk.com/uk/the-ordinary",
+      "retrieval_date": "2026-08-28"
+    }
+  ],
+  "sources": [
+    {
+      "title": "UK Office for Product Safety and Standards (OPSS) - Cosmetic Notification",
+      "url": "https://www.gov.uk/guidance/submit-a-cosmetic-product-notification",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}

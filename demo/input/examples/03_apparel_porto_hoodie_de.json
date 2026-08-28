@@ -1,0 +1,52 @@
+{
+  "request_id": "EXP-20260828-PT-DE-APPAREL",
+  "product_name": "Artisan Heavyweight Organic Cotton Hoodie",
+  "brand": "Porto Heritage Apparel",
+  "origin_country": "PT",
+  "target_country": "DE",
+  "target_market_region": "Central Europe (EU)",
+  "category": "apparel_textiles_clothing",
+  "specifications": {
+    "weight_grams": 750,
+    "dimensions_cm": {
+      "length": 35.0,
+      "width": 28.0,
+      "height": 4.0
+    },
+    "materials": [
+      "100% GOTS Certified Organic Cotton",
+      "Recycled polyester drawstrings"
+    ],
+    "electrical_components": false
+  },
+  "financials": {
+    "currency": "EUR",
+    "unit_cogs_ex_factory": 24.0,
+    "proposed_target_retail_msrp": 95.0,
+    "origin_export_packaging_cost": 1.8,
+    "target_channel_strategy": "Direct D2C"
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Colorful Standard Classic Organic Hoodie (Zalando DE)",
+      "seller": "Zalando DE",
+      "price_eur": 90.0,
+      "source_url": "https://www.zalando.de/colorful-standard-hoodie",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "Armedangels Organic Hoodie",
+      "seller": "Armedangels Store",
+      "price_eur": 99.9,
+      "source_url": "https://www.armedangels.com/de-de/hoodies",
+      "retrieval_date": "2026-08-28"
+    }
+  ],
+  "sources": [
+    {
+      "title": "European Chemicals Agency (ECHA) - REACH Textile Requirements",
+      "url": "https://echa.europa.eu/regulations/reach/legislation",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}

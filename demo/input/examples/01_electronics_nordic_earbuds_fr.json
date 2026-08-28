@@ -1,0 +1,54 @@
+{
+  "request_id": "EXP-20260828-EE-FR-AUDIO",
+  "product_name": "Nordic Pure ANC Wireless Earbuds",
+  "brand": "Nordic Sound Labs",
+  "origin_country": "EE",
+  "target_country": "FR",
+  "target_market_region": "Western Europe (EU)",
+  "category": "electronics_audio_wearables",
+  "specifications": {
+    "weight_grams": 180,
+    "dimensions_cm": {
+      "length": 8.0,
+      "width": 6.0,
+      "height": 3.5
+    },
+    "materials": [
+      "Anodized Aluminum",
+      "Recycled ABS plastic",
+      "Silicone ear tips",
+      "Lithium-ion battery"
+    ],
+    "electrical_components": true
+  },
+  "financials": {
+    "currency": "EUR",
+    "unit_cogs_ex_factory": 22.0,
+    "proposed_target_retail_msrp": 89.0,
+    "origin_export_packaging_cost": 2.5,
+    "target_channel_strategy": "D2C Direct + Fnac / Darty Marketplace"
+  },
+  "local_competitor_benchmarks": [
+    {
+      "name": "Sony WF-C700N (Amazon FR)",
+      "seller": "Amazon France",
+      "price_eur": 99.0,
+      "source_url": "https://www.amazon.fr/dp/B0BYP7Y2Z1",
+      "retrieval_date": "2026-08-28"
+    },
+    {
+      "name": "Jabra Elite 4 (Fnac.com)",
+      "seller": "Fnac Direct",
+      "price_eur": 89.99,
+      "source_url": "https://www.fnac.com/jabra-elite",
+      "retrieval_date": "2026-08-28"
+    }
+  ],
+  "sources": [
+    {
+      "title": "French ADEME Triman Packaging & WEEE EPR Guide",
+      "url": "https://www.ademe.fr/en/our-missions/supporting-ecological-transition/",
+      "retrieval_date": "2026-08-28"
+    }
+  ]
+}
