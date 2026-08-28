@@ -89,7 +89,7 @@ class ComplianceEngine:
             })
             mandatory_actions.append({
                 "title": "Enable EU OSS Quarterly Reporting",
-                "description": f"Declare German destination VAT ({int(baseline.get(standard_vat_rate, 0.19)*100)}%) via Romanian ANAF OSS portal.",
+                "description": f"Declare German destination VAT ({int(baseline.get('standard_vat_rate', 0.19)*100)}%) via Romanian ANAF OSS portal.",
                 "url": "https://taxation-customs.ec.europa.eu/one-stop-shop_en",
                 "estimated_cost_eur": 0.00
             })

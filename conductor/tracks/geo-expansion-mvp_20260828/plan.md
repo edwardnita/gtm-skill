@@ -23,12 +23,12 @@
 - [x] Task 2.9: Phase 2 Verification & Test Coverage Checkpoint
 
 ## Phase 3: Skill Definition & CLI Runner
-- [ ] Task 3.1: Implement end-to-end CLI evaluator `scripts/evaluate_expansion.py`
+- [x] Task 3.1: Implement end-to-end CLI evaluator `scripts/evaluate_expansion.py`
   - [ ] Ingests input JSON files, executes calculations, and renders markdown brief
-- [ ] Task 3.2: Create canonical Skill Definition `.agents/skills/geo-expansion-judge/SKILL.md`
+- [x] Task 3.2: Create canonical Skill Definition `.agents/skills/geo-expansion-judge/SKILL.md`
   - [ ] Configure YAML frontmatter (`name: geo-expansion-judge`, `description`)
   - [ ] Write imperative operational workflow, error handling, and completion criteria
-- [ ] Task 3.3: Phase 3 Verification & Skill Execution Checkpoint
+- [x] Task 3.3: Phase 3 Verification & Skill Execution Checkpoint
 
 ## Phase 4: Evals, Seed Prompt, Fallback & Submission Validation
 - [ ] Task 4.1: Write `demo/seed-prompt.md` with exact cold-run jury prompt
