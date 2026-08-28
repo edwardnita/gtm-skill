@@ -3,138 +3,160 @@
     "source": "TED — Tenders Electronic Daily (official EU procurement journal)",
     "api": "https://api.ted.europa.eu/v3/notices/search",
     "cpv": [
-      "72000000",
-      "72200000"
+      "33111000"
     ],
     "country": "ROU",
     "window_months": 12,
     "since": "20250828",
-    "retrieved_at": "2026-08-28T16:30:24.899Z",
+    "retrieved_at": "2026-08-28T16:59:49.850Z",
     "note": "Live API data at retrieval time. Award sample capped at 100 most recent notices."
   },
   "demand": {
-    "contract_notices": 733,
+    "contract_notices": 152,
     "days_since_latest": 1,
     "recent_examples": [
       {
-        "number": "595713-2026",
-        "title": "Romania – Software configuration services – Servicii de implementare „APLICAȚIE SOFTWARE – PLATFORMĂ INTEGRATĂ”, în cadrul Proiectului “DIGITALIZAREA UAT ORAȘUL SEGARCEA”,",
-        "buyer": "ORASUL SEGARCEA",
+        "number": "593877-2026",
+        "title": "Romania – Medical equipments – Furnizare, instalare, punere in functiune, instruire personal si service in perioada de garantie in cadrul obiectivului: Unitate hibrida de tratament cardiovascular avansat",
+        "buyer": "SPITAL CLINIC JUDETEAN DE URGENTA BIHOR",
         "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/-/detail/595713-2026"
+        "url": "https://ted.europa.eu/en/notice/-/detail/593877-2026"
       },
       {
-        "number": "595891-2026",
-        "title": "Romania – Software-related services – “Servicii de suport tehnic pentru produse software Oracle” CR 45787",
-        "buyer": "Societatea Nationala NUCLEARELECTRICA S.A.",
-        "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/-/detail/595891-2026"
+        "number": "590800-2026",
+        "title": "Romania – Medical consumables – Acord-cadru de achizitie publică de materiale sanitare divizate pe 125 loturi",
+        "buyer": "SPITALUL CLINIC JUDETEAN DE URGENTA\"SFANTUL IOAN CEL NOU\"SUCEAVA",
+        "date": "2026-08-27",
+        "url": "https://ted.europa.eu/en/notice/-/detail/590800-2026"
       },
       {
-        "number": "594768-2026",
-        "title": "Romania – Miscellaneous software development services and computer systems – Servicii de dezvoltare și implementare a Sistemului Informatic Integrat inclusiv software de bază și instruire utilizatori” în cadrul proiectului ”Date și Informații Statistice Tehnologizate de Interes Național pentru Cunoaștere și Transparență” (DISTINCT), COD SMIS 343122",
-        "buyer": "INSTITUTUL NATIONAL DE STATISTICA",
-        "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/-/detail/594768-2026"
+        "number": "587829-2026",
+        "title": "Romania – Medical equipments – Echipamente medicale pentru imbunatatirea tratarii AVC in cadrul proiectului \"Raspuns Rapid pentru Vieti Salvate - Imbunatatirea tratarii AVC in Sprijinul Comunitatii- RAPID AVC",
+        "buyer": "Spital Clinic Judetean de Urgenta \"Pius Brinzeu\" Timisoara",
+        "date": "2026-08-26",
+        "url": "https://ted.europa.eu/en/notice/-/detail/587829-2026"
       }
     ]
   },
   "awards": {
-    "award_notices": 799,
+    "award_notices": 261,
     "sample_size": 100,
-    "distinct_buyers_in_sample": 65,
+    "distinct_buyers_in_sample": 35,
     "top_buyers": [
       {
-        "name": "AGENTIA DE PLATI SI INTERVENTIE PENTRU AGRICULTURA",
-        "notices": 7
+        "name": "SPITAL CLINIC JUDETEAN DE URGENTA BIHOR",
+        "notices": 34
       },
       {
-        "name": "SECTOR 3 AL MUNICIPIULUI BUCURESTI",
-        "notices": 5
+        "name": "U.A.T JUDETUL CONSTANTA - CONSILIUL JUDETEAN CONSTANTA",
+        "notices": 14
       },
       {
-        "name": "Direcția Generală de Protecție Internă",
-        "notices": 4
+        "name": "SPITALUL CLINIC DE RECUPERARE CLUJ-NAPOCA",
+        "notices": 8
       },
       {
-        "name": "Ministerul Dezvoltării, Lucrărilor Publice și Administrației",
-        "notices": 4
-      },
-      {
-        "name": "AUTORITATEA PENTRU DIGITALIZAREA ROMANIEI",
-        "notices": 4
-      },
-      {
-        "name": "MINISTERUL AFACERILOR INTERNE",
-        "notices": 4
-      },
-      {
-        "name": "SPEEH HIDROELECTRICA SA",
-        "notices": 4
-      },
-      {
-        "name": "DISTRIBUTIE ENERGIE OLTENIA S.A.",
+        "name": "Spitalul Universitar de Urgenta Militar Central \"Dr. Carol Davila\"",
         "notices": 3
+      },
+      {
+        "name": "Spitalul Clinic Judetean de Urgenta Targu.Mures",
+        "notices": 3
+      },
+      {
+        "name": "SPITALUL CLINIC DE URGENTA PENTRU COPII ,,Maria Sklodowska Curie\"",
+        "notices": 3
+      },
+      {
+        "name": "Spitalul Judetean de Urgenta Miercurea Ciuc",
+        "notices": 2
+      },
+      {
+        "name": "SPITALUL CLINIC SFANTA MARIA",
+        "notices": 2
       }
     ],
     "top_winners": [
       {
-        "name": "SIVECO TECHNOLOGY S.R.L.",
-        "wonNotices": 8
+        "name": "MEDICAL DEVICES & DIAGNOSTICS",
+        "wonNotices": 38
       },
       {
-        "name": "ASEE Solutions",
-        "wonNotices": 4
+        "name": "EXIMIA MEDICAL",
+        "wonNotices": 37
       },
       {
-        "name": "Technology Systems and Services International",
-        "wonNotices": 4
+        "name": "QUANTUSMED",
+        "wonNotices": 29
       },
       {
-        "name": "ONE SOFTWARE",
-        "wonNotices": 4
+        "name": "BOSTON SCIENTIFIC ROMANIA",
+        "wonNotices": 29
       },
       {
-        "name": "Software Imagination & Vision",
-        "wonNotices": 4
+        "name": "MEDI -TECH BUSINESS",
+        "wonNotices": 28
       },
       {
-        "name": "ORANGE ROMANIA",
-        "wonNotices": 4
+        "name": "INNOVOTECH S.R.L.",
+        "wonNotices": 28
       },
       {
-        "name": "Digi Romania S.A.",
-        "wonNotices": 4
+        "name": "TECMED",
+        "wonNotices": 27
       },
       {
-        "name": "AROBS SYSTEMS SRL",
-        "wonNotices": 3
+        "name": "THREE PHARM",
+        "wonNotices": 27
       }
     ],
     "awarded_value_by_currency_in_sample": {
       "RON": {
-        "sum": 1730304473.0799994,
-        "notices_with_value": 93,
-        "average": 18605424.441720422
-      },
-      "EUR": {
-        "sum": 244259340.70000002,
-        "notices_with_value": 6,
-        "average": 40709890.11666667
-      },
-      "USD": {
-        "sum": 1280000,
-        "notices_with_value": 1,
-        "average": 1280000
+        "sum": 3369520315.860001,
+        "notices_with_value": 100,
+        "average": 33695203.15860001
       }
     }
   },
+  "eu_markets": {
+    "basis": "contract-notice volume only, same CPV codes and 12-month window",
+    "countries_scanned": 23,
+    "countries_failed": 4,
+    "target_rank": 2,
+    "top5": [
+      {
+        "country": "POL",
+        "country_name": "Poland",
+        "contract_notices": 1061
+      },
+      {
+        "country": "ROU",
+        "country_name": "Romania",
+        "contract_notices": 152
+      },
+      {
+        "country": "DEU",
+        "country_name": "Germany",
+        "contract_notices": 146
+      },
+      {
+        "country": "CZE",
+        "country_name": "Czechia",
+        "contract_notices": 129
+      },
+      {
+        "country": "GRC",
+        "country_name": "Greece",
+        "contract_notices": 90
+      }
+    ]
+  },
   "score": {
-    "demand_volume": 25,
+    "demand_volume": 18,
     "buyer_diversity": 25,
-    "winner_openness": 25,
+    "winner_openness": 18,
     "recency": 25,
-    "total": 100
+    "total": 86
   },
   "score_bands": {
     "demand_volume": "contract notices in window: 0=0, 1-9=6, 10-49=12, 50-199=18, 200+=25",

@@ -68,13 +68,63 @@ function band(value, steps) {
   return 0;
 }
 
+const EU27 = { AUT: "Austria", BEL: "Belgium", BGR: "Bulgaria", HRV: "Croatia", CYP: "Cyprus", CZE: "Czechia", DNK: "Denmark", EST: "Estonia", FIN: "Finland", FRA: "France", DEU: "Germany", GRC: "Greece", HUN: "Hungary", IRL: "Ireland", ITA: "Italy", LVA: "Latvia", LTU: "Lithuania", LUX: "Luxembourg", MLT: "Malta", NLD: "Netherlands", POL: "Poland", PRT: "Portugal", ROU: "Romania", SVK: "Slovakia", SVN: "Slovenia", ESP: "Spain", SWE: "Sweden" };
+
+// Count contract notices for one country (demand volume only; used by the EU-wide ranking).
+async function countryCount(iso3) {
+  const query =
+    `(classification-cpv IN (${cpvs.join(" ")})) AND (place-of-performance IN (${iso3}))` +
+    ` AND (publication-date>=${sinceStr}) AND (notice-type IN (cn-standard cn-social cn-desg))`;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const res = await fetch(API, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query, fields: ["publication-number"], limit: 1 }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return (await res.json()).totalNoticeCount ?? 0;
+    } catch (e) {
+      if (attempt === 3) throw e;
+      await new Promise((r) => setTimeout(r, attempt * 600));
+    }
+  }
+}
+
+async function euScan() {
+  const rows = [];
+  let failed = 0;
+  const codes = Object.keys(EU27);
+  for (let i = 0; i < codes.length; i += 3) {
+    const batch = codes.slice(i, i + 3);
+    const results = await Promise.allSettled(batch.map((c) => countryCount(c)));
+    results.forEach((r, j) => {
+      if (r.status === "fulfilled") rows.push({ country: batch[j], country_name: EU27[batch[j]], contract_notices: r.value });
+      else failed++;
+    });
+    if (i + 3 < codes.length) await new Promise((r) => setTimeout(r, 250));
+  }
+  rows.sort((a, b) => b.contract_notices - a.contract_notices);
+  const targetRank = rows.findIndex((r) => r.country === country) + 1;
+  return {
+    basis: "contract-notice volume only, same CPV codes and 12-month window",
+    countries_scanned: rows.length,
+    countries_failed: failed,
+    target_rank: targetRank || null,
+    top5: rows.slice(0, 5),
+  };
+}
+
 try {
   const retrievedAt = new Date().toISOString();
 
-  const demand = await search(" AND (notice-type IN (cn-standard cn-social cn-desg))",
-    ["publication-number", "notice-title", "buyer-name", "publication-date"], 20);
-  const awards = await search(" AND (notice-type IN (can-standard can-social can-desg))",
-    ["publication-number", "notice-title", "buyer-name", "winner-name", "total-value", "total-value-cur", "publication-date"], 100);
+  const [demand, awards, eu_markets] = await Promise.all([
+    search(" AND (notice-type IN (cn-standard cn-social cn-desg))",
+      ["publication-number", "notice-title", "buyer-name", "publication-date"], 20),
+    search(" AND (notice-type IN (can-standard can-social can-desg))",
+      ["publication-number", "notice-title", "buyer-name", "winner-name", "total-value", "total-value-cur", "publication-date"], 100),
+    euScan().catch(() => null),
+  ]);
 
   const demandCount = demand.totalNoticeCount ?? 0;
   const awardCount = awards.totalNoticeCount ?? 0;
@@ -138,6 +188,7 @@ try {
       distinct_buyers_in_sample: buyers.size, top_buyers: topBuyers,
       top_winners: topWinners, awarded_value_by_currency_in_sample: valueByCurrency,
     },
+    eu_markets: eu_markets ?? { basis: "scan failed; per-country ranking unavailable this run", top5: [] },
     score,
     score_bands: {
       demand_volume: "contract notices in window: 0=0, 1-9=6, 10-49=12, 50-199=18, 200+=25",
