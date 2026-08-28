@@ -2,13 +2,13 @@
 
 ## Phase 1: Input Datasets & Grounded Schemas
 - [x] Task 1.1: Create representative input profile `demo/input/expansion_request.json`
-  - [ ] Define Specialty Coffee Dripper Kit specs (RO -> DE, MSRP, COGS, weight, materials)
-  - [ ] Add public source references and pricing anchors
+  - [x] Define Specialty Coffee Dripper Kit specs (RO -> DE, MSRP, COGS, weight, materials)
+  - [x] Add public source references and pricing anchors
 - [x] Task 1.2: Create Apify Reddit market dataset `demo/input/apify_reddit_signals.json`
-  - [ ] Add genuine scraped community discussions (`r/Coffee`, `r/espresso`, `r/germany`)
-  - [ ] Document Apify Actor metadata, run URL, and retrieval timestamps
+  - [x] Add genuine scraped community discussions (`r/Coffee`, `r/espresso`, `r/germany`)
+  - [x] Document Apify Actor metadata, run URL, and retrieval timestamps
 - [x] Task 1.3: Create country regulatory & tax baselines `scripts/data/country_baselines.json`
-  - [ ] Add German/EU VAT rates, LUCID/VerpackG fees, and Food Contact Material regulations
+  - [x] Add German/EU VAT rates, LUCID/VerpackG fees, and Food Contact Material regulations
 - [x] Task 1.4: Phase 1 Verification Checkpoint
 
 ## Phase 2: Core Analytical & Calculation Engines (TDD)
@@ -24,10 +24,10 @@
 
 ## Phase 3: Skill Definition & CLI Runner
 - [x] Task 3.1: Implement end-to-end CLI evaluator `scripts/evaluate_expansion.py`
-  - [ ] Ingests input JSON files, executes calculations, and renders markdown brief
+  - [x] Ingests input JSON files, executes calculations, and renders markdown brief
 - [x] Task 3.2: Create canonical Skill Definition `.agents/skills/geo-expansion-judge/SKILL.md`
-  - [ ] Configure YAML frontmatter (`name: geo-expansion-judge`, `description`)
-  - [ ] Write imperative operational workflow, error handling, and completion criteria
+  - [x] Configure YAML frontmatter (`name: geo-expansion-judge`, `description`)
+  - [x] Write imperative operational workflow, error handling, and completion criteria
 - [x] Task 3.3: Phase 3 Verification & Skill Execution Checkpoint
 
 ## Phase 4: Evals, Seed Prompt, Fallback & Submission Validation
