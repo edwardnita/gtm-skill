@@ -18,7 +18,7 @@ The organizer presents this repository for you, in 2 minutes, without having see
 
 1. Codex is open at the repository root.
 2. Paste [`demo/seed-prompt.md`](demo/seed-prompt.md).
-3. Watch for: Output of the **Expansion Viability Decision Brief** with verdict badge `[ GO ]`, 96/100 score, landed margin breakdown (50.0%), and Apify Reddit community sentiment summary.
+3. Watch for: Output of the **Expansion Viability Decision Brief** with verdict badge `[ GO ]`, 94/100 score, landed margin breakdown (50.0%), and Apify Reddit community sentiment summary.
 4. If nothing visible after 60 seconds, open the fallback: [`demo/output/expansion_brief.md`](demo/output/expansion_brief.md)
 
 ## Show this — 25 seconds
@@ -27,13 +27,13 @@ The organizer presents this repository for you, in 2 minutes, without having see
 
 **Evidence:** Competitor price benchmarks cite real German store URLs (Amazon.de, The Barn Berlin, Coffee Circle); regulatory checks cite official BfR and LUCID registries; community signals cite Apify Reddit scrape run timestamp (`2026-08-28T17:45:00Z`).
 
-**Fallback output was produced:** 2026-08-28 19:00:21 UTC via `$geo-expansion-judge` CLI engine.
+**Fallback output was produced:** 2026-08-28 19:19:41 UTC via `$geo-expansion-judge` CLI engine.
 
 ## Evals — 10 seconds
 
 | Case | Result | Where |
 | :--- | :--- | :--- |
-| Intended | Passes with `[ GO ]` (96/100 score, 50.0% landed margin, positive sentiment) | [`demo/evals.md`](demo/evals.md) |
+| Intended | Passes with `[ GO ]` (94/100 score, 50.0% landed margin, positive sentiment) | [`demo/evals.md`](demo/evals.md) |
 | Insufficient evidence | Passes with `[ INSUFFICIENT_EVIDENCE ]` when specs/COGS are missing | [`demo/evals.md`](demo/evals.md) |
 | Failure / exclusion | Passes with `[ NO_GO ]` and kill trigger on lead glaze chemical hazard | [`demo/evals.md`](demo/evals.md) |
 
