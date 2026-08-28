@@ -9,7 +9,7 @@
     "country": "ROU",
     "window_months": 12,
     "since": "20250828",
-    "retrieved_at": "2026-08-28T16:01:33.991Z",
+    "retrieved_at": "2026-08-28T16:30:24.899Z",
     "note": "Live API data at retrieval time. Award sample capped at 100 most recent notices."
   },
   "demand": {
@@ -21,21 +21,21 @@
         "title": "Romania – Software configuration services – Servicii de implementare „APLICAȚIE SOFTWARE – PLATFORMĂ INTEGRATĂ”, în cadrul Proiectului “DIGITALIZAREA UAT ORAȘUL SEGARCEA”,",
         "buyer": "ORASUL SEGARCEA",
         "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/595713-2026"
+        "url": "https://ted.europa.eu/en/notice/-/detail/595713-2026"
       },
       {
         "number": "595891-2026",
         "title": "Romania – Software-related services – “Servicii de suport tehnic pentru produse software Oracle” CR 45787",
         "buyer": "Societatea Nationala NUCLEARELECTRICA S.A.",
         "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/595891-2026"
+        "url": "https://ted.europa.eu/en/notice/-/detail/595891-2026"
       },
       {
         "number": "594768-2026",
         "title": "Romania – Miscellaneous software development services and computer systems – Servicii de dezvoltare și implementare a Sistemului Informatic Integrat inclusiv software de bază și instruire utilizatori” în cadrul proiectului ”Date și Informații Statistice Tehnologizate de Interes Național pentru Cunoaștere și Transparență” (DISTINCT), COD SMIS 343122",
         "buyer": "INSTITUTUL NATIONAL DE STATISTICA",
         "date": "2026-08-28",
-        "url": "https://ted.europa.eu/en/notice/594768-2026"
+        "url": "https://ted.europa.eu/en/notice/-/detail/594768-2026"
       }
     ]
   },
@@ -112,9 +112,21 @@
       }
     ],
     "awarded_value_by_currency_in_sample": {
-      "RON": 1730304473.0799994,
-      "EUR": 244259340.70000002,
-      "USD": 1280000
+      "RON": {
+        "sum": 1730304473.0799994,
+        "notices_with_value": 93,
+        "average": 18605424.441720422
+      },
+      "EUR": {
+        "sum": 244259340.70000002,
+        "notices_with_value": 6,
+        "average": 40709890.11666667
+      },
+      "USD": {
+        "sum": 1280000,
+        "notices_with_value": 1,
+        "average": 1280000
+      }
     }
   },
   "score": {

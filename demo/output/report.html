@@ -35,7 +35,7 @@
   table{width:100%;border-collapse:collapse;font-size:13.5px}
   th{ text-align:left;color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line)}
   td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.num,th.num{text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}
   tr:last-child td{border-bottom:none}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
@@ -66,7 +66,7 @@
     <div class="kicker">Market-entry signal report · public procurement</div>
     <h1>Custom software development and IT services — Romania</h1>
     <div class="sub">
-      CPV 72000000, 72200000 · window: last 12 months · data retrieved 2026-08-28 16:01 UTC from
+      CPV 72000000, 72200000 · window: last 12 months · data retrieved 2026-08-28 16:30 UTC from
       <a href="https://ted.europa.eu">TED — Tenders Electronic Daily</a> (official EU procurement journal), via api.ted.europa.eu/v3/notices/search
     </div>
   </header>
@@ -85,12 +85,12 @@
     </div>
   </div>
 
-  <div class="callout">Romania's public sector published <strong>733 calls for tender</strong> for IT and software services in the last 12 months, and the 100 most recent awards alone total <strong>≈ 1.73 bn RON + 244.3 m EUR + 1.3 m USD</strong>. 65 different authorities bought; the busiest winner (SIVECO TECHNOLOGY S.R.L.) took only 8 of 100 sampled awards — an active, diverse market with no dominant incumbent.</div>
+  <div class="callout">Romania's public sector published <strong>733 calls for tender</strong> for IT and software services in the last 12 months, and the 100 most recent awards alone total <strong>≈ 1.73 bn RON + 244.26 m EUR + 1.28 m USD</strong>. 65 different authorities bought; the busiest winner (SIVECO TECHNOLOGY S.R.L.) took only 8 of 100 sampled awards — an active, diverse market with no dominant incumbent.</div>
 
   <h2>Is there demand?</h2>
   <div class="card">
     <p>733 contract notices (calls for tender) and 799 award notices were published in the window, the most recent on 2026-08-28. Buyers span the full range from small municipalities to city halls, national agencies and state energy companies.</p>
-    <p class="fine" style="margin-top:8px">Counted from contract notices (calls for tender) matching CPV 72000000, 72200000 with place of performance ROU, published since 2025-08-28. Source: TED API, retrieved 2026-08-28 16:01 UTC.</p>
+    <p class="fine" style="margin-top:8px">Counted from contract notices (calls for tender) matching CPV 72000000, 72200000 with place of performance ROU, published since 2025-08-28. Source: TED API, retrieved 2026-08-28 16:30 UTC.</p>
   </div>
 
   <h2>Who buys — top contracting authorities</h2>
@@ -126,7 +126,7 @@
         <tr><td>AROBS SYSTEMS SRL</td><td class="num">3</td></tr>
       </tbody>
     </table>
-    <p class="fine" style="margin-top:8px">Awarded value in sample: ≈ 1.73 bn RON + 244.3 m EUR + 1.3 m USD. Company-level facts only, from published award notices.</p>
+    <p class="fine" style="margin-top:8px">Awarded value in sample: ≈ 1.73 bn RON + 244.26 m EUR + 1.28 m USD · average per awarded notice: ≈ 18.61 m RON + 40.71 m EUR + 1.28 m USD. Company-level facts only, from published award notices.</p>
   </div>
 
   <h2>Three live example tenders</h2>
@@ -134,9 +134,9 @@
     <table>
       <thead><tr><th>Tender</th><th>Buyer</th><th class="num">Published</th></tr></thead>
       <tbody data-fill="examples">
-        <tr><td><a href="https://ted.europa.eu/en/notice/595713-2026">Romania – Software configuration services – Servicii de implementare „APLICAȚIE SOFTWARE – PLATFORMĂ INTEGRATĂ”, în cadrul Proiectului “DIGITALIZAREA UAT ORAȘUL</a></td><td>ORASUL SEGARCEA</td><td class="num">2026-08-28</td></tr>
-        <tr><td><a href="https://ted.europa.eu/en/notice/595891-2026">Romania – Software-related services – “Servicii de suport tehnic pentru produse software Oracle” CR 45787</a></td><td>Societatea Nationala NUCLEARELECTRICA S.A.</td><td class="num">2026-08-28</td></tr>
-        <tr><td><a href="https://ted.europa.eu/en/notice/594768-2026">Romania – Miscellaneous software development services and computer systems – Servicii de dezvoltare și implementare a Sistemului Informatic Integrat inclusiv so</a></td><td>INSTITUTUL NATIONAL DE STATISTICA</td><td class="num">2026-08-28</td></tr>
+        <tr><td><a href="https://ted.europa.eu/en/notice/-/detail/595713-2026">Romania – Software configuration services – Servicii de implementare „APLICAȚIE SOFTWARE – PLATFORMĂ INTEGRATĂ”, în cadrul Proiectului “DIGITALIZAREA UAT ORAȘUL</a></td><td>ORASUL SEGARCEA</td><td class="num">2026-08-28</td></tr>
+        <tr><td><a href="https://ted.europa.eu/en/notice/-/detail/595891-2026">Romania – Software-related services – “Servicii de suport tehnic pentru produse software Oracle” CR 45787</a></td><td>Societatea Nationala NUCLEARELECTRICA S.A.</td><td class="num">2026-08-28</td></tr>
+        <tr><td><a href="https://ted.europa.eu/en/notice/-/detail/594768-2026">Romania – Miscellaneous software development services and computer systems – Servicii de dezvoltare și implementare a Sistemului Informatic Integrat inclusiv so</a></td><td>INSTITUTUL NATIONAL DE STATISTICA</td><td class="num">2026-08-28</td></tr>
       </tbody>
     </table>
   </div>
@@ -152,7 +152,7 @@
   </div>
 
   <footer>
-    Generated by <strong>$tender-demand-scan</strong> · every figure above derives from the TED API responses retrieved at 2026-08-28 16:01 UTC · this report never includes personal contact data and does not make the bid/no-bid decision.
+    Generated by <strong>$tender-demand-scan</strong> · every figure above derives from the TED API responses retrieved at 2026-08-28 16:30 UTC · this report never includes personal contact data and does not make the bid/no-bid decision.
   </footer>
 </div>
 <script>

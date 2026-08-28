@@ -25,7 +25,7 @@
 
 **Evidence:** The header and footer carry the TED API source and retrieval timestamp; the three example tenders link to ted.europa.eu; the raw API response is committed at [`demo/output/ted-data.json`](demo/output/ted-data.json); the scoring bands are printed in the report so the score can be challenged.
 
-**Fallback output was produced:** 2026-08-28, ~19:01 EEST, by running the seed prompt against the live TED API during the build window (retrieval timestamp 16:01 UTC is embedded in the report). The report has one-click PDF/print and CSV export.
+**Fallback output was produced:** 2026-08-28, ~19:30 EEST, by running the seed prompt against the live TED API during the build window (retrieval timestamp 16:30 UTC is embedded in the report). The report has one-click PDF/print and CSV export.
 
 ## Evals — 10 seconds
 

@@ -38,7 +38,7 @@
   table{width:100%;border-collapse:collapse;font-size:13.5px}
   th{ text-align:left;color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line)}
   td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.num,th.num{text-align:center;font-variant-numeric:tabular-nums;white-space:nowrap}
   tr:last-child td{border-bottom:none}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
@@ -115,7 +115,7 @@
         <tr><td>{{WINNER_NAME}}</td><td class="num">{{WINNER_COUNT}}</td></tr>
       </tbody>
     </table>
-    <p class="fine" style="margin-top:8px">Awarded value in sample: {{VALUE_SUMMARY}}. Company-level facts only, from published award notices.</p>
+    <p class="fine" style="margin-top:8px">Awarded value in sample: {{VALUE_SUMMARY}} · average per awarded notice: {{AVG_VALUE}}. Company-level facts only, from published award notices.</p>
   </div>
 
   <h2>Three live example tenders</h2>

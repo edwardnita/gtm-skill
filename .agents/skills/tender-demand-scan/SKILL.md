@@ -25,7 +25,7 @@ A product/service description and one target EU country, given in the prompt or 
    - One headline finding in plain language, using only numbers present in the JSON.
 6. Copy `references/report-template.html` (next to this file), delete its leading instruction comment, and replace every `{{TOKEN}}` and every `data-fill` tbody with real rows from the JSON:
    - Bar widths: `PCT_* = points / 25 * 100`. The `WHY_*` lines quote the underlying number (e.g. "733 contract notices in 12 months").
-   - `VALUE_SUMMARY`: format `awarded_value_by_currency_in_sample` compactly (e.g. "1.73 bn RON + 244 m EUR").
+   - `VALUE_SUMMARY`: format the per-currency `sum` values compactly (e.g. "1.73 bn RON + 244 m EUR"); `AVG_VALUE`: the per-currency `average` values, same format.
    - Every table row keeps its source: examples link to their `url`; buyer/winner tables state they come from the award-notice sample.
    - Fill the scoring-band lines from `score_bands` verbatim. `EXTRA_LIMITATION`: state the honest one for this run (e.g. broad CPV mapping, small sample).
 7. Write the finished report to `report.html` at the repository root, unless the prompt names another output path. Leave no `{{TOKEN}}` unreplaced.

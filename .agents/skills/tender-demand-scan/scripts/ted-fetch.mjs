@@ -91,7 +91,12 @@ try {
     for (const w of names) winners.set(w, (winners.get(w) ?? 0) + 1);
     const cur = (n["total-value-cur"] ?? [])[0];
     const val = Number(n["total-value"]);
-    if (cur && Number.isFinite(val)) valueByCurrency[cur] = (valueByCurrency[cur] ?? 0) + val;
+    if (cur && Number.isFinite(val)) {
+      const v = (valueByCurrency[cur] ??= { sum: 0, notices_with_value: 0, average: 0 });
+      v.sum += val;
+      v.notices_with_value += 1;
+      v.average = v.sum / v.notices_with_value;
+    }
   }
   const topWinners = [...winners.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8)
     .map(([name, wonNotices]) => ({ name, wonNotices }));
@@ -103,7 +108,7 @@ try {
     title: text(n["notice-title"]),
     buyer: text(n["buyer-name"]),
     date: String(n["publication-date"] ?? "").slice(0, 10),
-    url: `https://ted.europa.eu/en/notice/${n["publication-number"]}`,
+    url: `https://ted.europa.eu/en/notice/-/detail/${n["publication-number"]}`,
   }));
 
   const latest = recent[0]?.date ? new Date(recent[0].date) : null;
