@@ -12,15 +12,15 @@
 - [x] Task 1.4: Phase 1 Verification Checkpoint
 
 ## Phase 2: Core Analytical & Calculation Engines (TDD)
-- [ ] Task 2.1: Write unit tests for Economics Engine in `tests/test_economics.py` (Red)
-- [ ] Task 2.2: Implement Economics Engine in `scripts/economics.py` (Green)
-- [ ] Task 2.3: Write unit tests for Compliance Engine in `tests/test_compliance.py` (Red)
-- [ ] Task 2.4: Implement Compliance Engine in `scripts/compliance.py` (Green)
-- [ ] Task 2.5: Write unit tests for Apify Market Pulse Engine in `tests/test_sentiment.py` (Red)
-- [ ] Task 2.6: Implement Apify Market Pulse Engine in `scripts/sentiment.py` (Green)
-- [ ] Task 2.7: Write unit tests for Composite Scoring & Decision Rubric in `tests/test_decision.py` (Red)
-- [ ] Task 2.8: Implement Decision Engine in `scripts/decision.py` (Green)
-- [ ] Task 2.9: Phase 2 Verification & Test Coverage Checkpoint
+- [x] Task 2.1: Write unit tests for Economics Engine in `tests/test_economics.py` (Red)
+- [x] Task 2.2: Implement Economics Engine in `scripts/economics.py` (Green)
+- [x] Task 2.3: Write unit tests for Compliance Engine in `tests/test_compliance.py` (Red)
+- [x] Task 2.4: Implement Compliance Engine in `scripts/compliance.py` (Green)
+- [x] Task 2.5: Write unit tests for Apify Market Pulse Engine in `tests/test_sentiment.py` (Red)
+- [x] Task 2.6: Implement Apify Market Pulse Engine in `scripts/sentiment.py` (Green)
+- [x] Task 2.7: Write unit tests for Composite Scoring & Decision Rubric in `tests/test_decision.py` (Red)
+- [x] Task 2.8: Implement Decision Engine in `scripts/decision.py` (Green)
+- [x] Task 2.9: Phase 2 Verification & Test Coverage Checkpoint
 
 ## Phase 3: Skill Definition & CLI Runner
 - [ ] Task 3.1: Implement end-to-end CLI evaluator `scripts/evaluate_expansion.py`
