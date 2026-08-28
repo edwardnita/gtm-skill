@@ -1,0 +1,8 @@
+{
+  "track_id": "geo-expansion-mvp_20260828",
+  "type": "MVP",
+  "status": "new",
+  "created_at": "2026-08-28T18:56:51.434133",
+  "updated_at": "2026-08-28T18:56:51.434144",
+  "description": "Initial MVP implementation of the Geo-Expansion Viability Judge (geo-expansion-judge) skill"
+}
