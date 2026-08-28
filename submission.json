@@ -2,7 +2,7 @@
   "schema_version": 2,
   "team": {
     "name": "Tender Radar",
-    "members": ["Eduard Nita"]
+    "members": ["Eduard Nita", "Radu Minea"]
   },
   "track": "custom",
   "problem": "A GTM lead weighing entry into a new EU market has no fast, evidence-backed way to see whether that country's public sector buys what they sell, who buys it, and who wins those contracts — $tender-demand-scan turns the official TED procurement feed into a scored, sourced market-entry signal report.",
