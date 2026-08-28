@@ -4,7 +4,7 @@ The organizer presents this repository for you, in 2 minutes, without having see
 
 ## Say this — 20 seconds
 
-**Team:** Brand Expansion AI (Radu)
+**Team:** Brand Expansion AI (Radu & Edward Nita)
 
 **Track:** `personalized-growth-engines`
 
