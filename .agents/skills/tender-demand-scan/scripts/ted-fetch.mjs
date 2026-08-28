@@ -128,7 +128,7 @@ try {
     search(" AND (notice-type IN (cn-standard cn-social cn-desg))",
       ["publication-number", "notice-title", "buyer-name", "publication-date"], 20),
     search(" AND (notice-type IN (can-standard can-social can-desg))",
-      ["publication-number", "notice-title", "buyer-name", "winner-name", "total-value", "total-value-cur", "publication-date"], 100),
+      ["publication-number", "notice-title", "buyer-name", "buyer-profile", "winner-name", "total-value", "total-value-cur", "publication-date"], 100),
     euScan().catch(() => null),
   ]);
 
@@ -139,10 +139,20 @@ try {
   // Winners: count notices won per company (deduped per notice — multi-lot awards repeat names).
   const winners = new Map();
   const buyers = new Map();
+  const buyerProfiles = new Map();
   const valueByCurrency = {};
   for (const n of awardSample) {
     const buyer = text(n["buyer-name"]);
-    if (buyer) buyers.set(buyer, (buyers.get(buyer) ?? 0) + 1);
+    if (buyer) {
+      buyers.set(buyer, (buyers.get(buyer) ?? 0) + 1);
+      // Keep a buyer-profile URL only when it points somewhere specific, not a portal homepage.
+      const prof = (n["buyer-profile"] ?? [])[0];
+      if (prof && !buyerProfiles.has(buyer)) {
+        try {
+          if (new URL(prof).pathname.replace(/\/+$/, "").length > 1) buyerProfiles.set(buyer, prof);
+        } catch { /* ignore malformed URLs */ }
+      }
+    }
     const names = new Set((Object.values(n["winner-name"] ?? {}).flat() ?? []).map((s) => s.trim()).filter(Boolean));
     for (const w of names) winners.set(w, (winners.get(w) ?? 0) + 1);
     const cur = (n["total-value-cur"] ?? [])[0];
@@ -157,7 +167,7 @@ try {
   const topWinners = [...winners.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8)
     .map(([name, wonNotices]) => ({ name, wonNotices }));
   const topBuyers = [...buyers.entries()].sort((a, b) => b[1] - a[1]).slice(0, 8)
-    .map(([name, notices]) => ({ name, notices }));
+    .map(([name, notices]) => ({ name, notices, ...(buyerProfiles.has(name) ? { profile: buyerProfiles.get(name) } : {}) }));
 
   const recent = (demand.notices ?? []).slice(0, 3).map((n) => ({
     number: n["publication-number"],
@@ -260,14 +270,30 @@ function renderReport(out, reportPath) {
       : "EU-wide scan unavailable this run; per-country ranking omitted rather than estimated.",
   };
 
+  // Optional build-time enrichment (see scripts/enrich-winners.mjs). Absent → section removed.
+  let enrichment = null;
+  const enrichPath = arg("enrichment");
+  if (enrichPath) {
+    try { enrichment = JSON.parse(readFile(enrichPath, "utf8")); } catch { enrichment = null; }
+  }
+
   let t = readFile(joinPath(dirName(fileURLToPath(import.meta.url)), "..", "references", "report-template.html"), "utf8");
   t = t.replace(/<!-- Template for \$tender-demand-scan[\s\S]*?-->\n/, "");
+  if (enrichment?.items?.length) {
+    tokens.ENRICH_NOTE = `Websites resolved and fetched at build time (${enrichment.retrieved_at.slice(0, 10)}) via ${esc(enrichment.source)}; descriptions are the companies' own homepage wording. Not part of the live no-credentials run.`;
+    t = t.replace(/<!-- ENRICH:START -->|<!-- ENRICH:END -->/g, "");
+  } else {
+    t = t.replace(/<!-- ENRICH:START -->[\s\S]*?<!-- ENRICH:END -->\n?/, "");
+  }
   for (const [k, v] of Object.entries(tokens)) t = t.replaceAll(`{{${k}}}`, v);
   const fills = {
-    buyers: aw.top_buyers.map((x) => `<tr><td>${esc(x.name)}</td><td class="num">${x.notices}</td></tr>`),
+    buyers: aw.top_buyers.map((x) => `<tr><td>${x.profile ? `<a href="${esc(x.profile)}">${esc(x.name)}</a>` : esc(x.name)}</td><td class="num">${x.notices}</td></tr>`),
     winners: aw.top_winners.map((x) => `<tr><td>${esc(x.name)}</td><td class="num">${x.wonNotices}</td></tr>`),
     examples: dm.recent_examples.map((x) => `<tr><td><a href="${x.url}">${esc((x.title ?? "").slice(0, 160))}</a></td><td>${esc(x.buyer)}</td><td class="num">${x.date}</td></tr>`),
     markets: (eu?.top5 ?? []).map((r, i) => `<tr><td class="num">${i + 1}</td><td>${esc(r.country_name)}${r.country === out.meta.country ? " — target" : ""}</td><td class="num">${r.contract_notices}</td></tr>`),
+    ...(enrichment?.items?.length ? {
+      enriched: enrichment.items.map((x) => `<tr><td>${esc(x.name)}</td><td class="num">${x.wonNotices}</td><td>${x.website ? `<a href="${esc(x.website)}">${esc(new URL(x.website).hostname)}</a>` : "not resolved"}</td><td class="fine">${esc((x.page_description ?? x.page_title ?? "—").slice(0, 160))}</td></tr>`),
+    } : {}),
   };
   for (const [key, rows] of Object.entries(fills)) {
     const body = rows.length ? rows.join("\n        ") : `<tr><td colspan="3" class="fine">none in this run</td></tr>`;
