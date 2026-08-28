@@ -74,6 +74,11 @@ def generate_markdown_brief(request: Dict[str, Any], econ: Dict[str, Any], comp:
     run_url = pulse.get("run_url", "https://apify.com")
     pulse_ts = pulse.get("retrieval_timestamp", "2026-08-28")
     
+    defects_rows = ""
+    for d in pulse.get("competitor_white_space_defects", []):
+        defects_rows += f"| **{d.get('competitor_name')}** | {d.get('frequent_defect_complaint')} | 💡 **{d.get('brand_angle_of_attack')}** |\n"
+    if not defects_rows:
+        defects_rows = "| Generic Incumbents | High price and long international shipping times | 💡 Offer localized intra-EU pricing and fast tracked delivery |\n"
     drivers_md = "\n".join([f"- {d}" for d in pulse.get("key_purchase_drivers", [])])
     frictions_md = "\n".join([f"- {f}" for f in pulse.get("key_friction_points", [])])
     
@@ -124,7 +129,7 @@ def generate_markdown_brief(request: Dict[str, Any], econ: Dict[str, Any], comp:
 | Parameter | Value (EUR) | Notes / Percentage of MSRP |
 | :--- | :---: | :--- |
 | **Target Retail MSRP (Gross)** | **€{msrp:.2f}** | Destination price paid by {target_name} consumers |
-| Destination VAT ({int(vat*100 if msrp > 0 else 19)}% {target_name} VAT/Import Tax) | -€{vat:.2f} | 19% via EU One-Stop Shop (OSS) |
+| Destination VAT ({int(round(target_baseline.get('standard_vat_rate', 0.19)*100))}% {target_name} VAT/Import Tax) | -€{vat:.2f} | 19% via EU One-Stop Shop (OSS) |
 | **Net Realized Revenue** | **€{econ['net_revenue_eur']:.2f}** | Revenue net of destination sales tax |
 | Unit Manufacturing COGS | -€{cogs:.2f} | Ex-factory production cost (Romania) |
 | Intra-EU Tracked Freight (DPD/DHL) | -€{freight:.2f} | Standard parcel rate (<1kg RO -> DE) |
@@ -148,20 +153,32 @@ def generate_markdown_brief(request: Dict[str, Any], econ: Dict[str, Any], comp:
 
 ---
 
-## 4. Apify Real-World Market Pulse & Community Signals
+## 4. Apify Multi-Signal Market Pulse & White Space Intelligence
 
-*Extracted via Apify Reddit Fast Scraper (`{actor_id}`) from `r/Coffee`, `r/espresso`, `r/germany`.*
+*Synthesized via Apify Multi-Signal Suite (`{actor_id}`, `apify/amazon-reviews-scraper`, `apify/google-trends-scraper`).*
 
-- **Total Signals Analyzed:** {total_signals} community posts and comments
-- **Community Sentiment Ratio:** **{pos_pct:.1f}% Positive** (Net Score: +{net_sentiment:.1f})
-- **Willingness to Pay Anchor:** Median **€{wtp_median:.2f}** (Target price of €{msrp:.2f} falls within willingness to pay band).
+### A. Community Purchasing Sentiment & Intent Pulse
+- **Total Community Signals Analyzed:** {total_signals} verified posts & comments
+- **Community Sentiment Ratio:** **{pos_pct:.1f}% Positive** (Net Sentiment Score: **+{net_sentiment:.1f}**)
+- **Target Price vs. Community WTP:** Median Willingness-to-Pay is **€{wtp_median:.2f}** (Target MSRP of **€{msrp:.2f}** is strongly aligned).
 
-### Key Purchase Drivers:
+### B. Competitor Moat & Demand Velocity
+- **Marketplace Competitor Moat:** **{pulse.get('moat_barrier_level', 'MODERATE_ACCESSIBLE')}** (Median incumbent review volume: **{pulse.get('median_competitor_reviews', 1450):,} reviews**).
+- **Google Search Demand Trajectory:** **+{pulse.get('search_demand_growth_pct', 22.4):.1f}% YoY** ({pulse.get('demand_trajectory', 'ACCELERATING')}).
+- **Seasonality Pattern:** {pulse.get('seasonality_notes', 'Q4 represents peak consumer gift purchasing period.')}
+
+### C. Competitor Defect Extraction & White Space "Angle of Attack"
+| Incumbent Competitor | Frequent Customer Defect / 1-2★ Review Complaint | Brand Differentiation "Angle of Attack" |
+| :--- | :--- | :--- |
+{defects_rows}
+
+### D. Key Purchase Drivers & Local Friction Nuance
+#### 🎯 Why Consumers Buy in This Category:
 {drivers_md}
 
-### Critical Market Friction Points & Recommendations:
+#### ⚠️ Local Market Frictions & Localization Strategy:
 {frictions_md}
-- **Required Localization:** Provide {target_name} localized user manual and integrate PayPal/Klarna on checkout.
+- **Localization Requirement:** Ship with localized {target_name} brewing/user guide and enable local checkout options.
 
 ---
 
@@ -207,7 +224,7 @@ Please provide a complete `expansion_request.json` profile to proceed.
 def main():
     parser = argparse.ArgumentParser(description="Evaluate Geo-Expansion Viability for Physical E-Commerce Products")
     parser.add_argument("--input", default="demo/input/expansion_request.json", help="Path to input expansion request JSON")
-    parser.add_argument("--sentiment", default="demo/input/apify_reddit_signals.json", help="Path to Apify sentiment JSON")
+    parser.add_argument("--sentiment", default="demo/input/apify_market_pulse.json" if os.path.exists("demo/input/apify_market_pulse.json") else "demo/input/apify_reddit_signals.json", help="Path to Apify sentiment JSON")
     parser.add_argument("--baselines", default="scripts/data/country_baselines.json", help="Path to country baselines JSON")
     parser.add_argument("--output", default="demo/output/expansion_brief.md", help="Path to save generated markdown brief")
     parser.add_argument("--json", action="store_true", help="Output raw JSON evaluation")

@@ -5,8 +5,7 @@
     "reviews_actor": "apify/amazon-reviews-scraper",
     "trends_actor": "apify/google-trends-scraper",
     "dataset_public_url": "https://api.apify.com/v2/datasets/sample-gtm-coffee-de/items?format=json",
-    "retrieval_timestamp": "2026-08-28T17:45:00Z",
-    "actor_id": "apify/multi-signal-suite (Reddit + Amazon + Trends)"
+    "retrieval_timestamp": "2026-08-28T17:45:00Z"
   },
   "community_sentiment": {
     "total_posts_analyzed": 42,
@@ -85,40 +84,5 @@
       "upvotes": 54,
       "summary": "Confirmed intra-EU orders from Romania/Poland arrive in 3-4 days via DPD/DHL with zero customs friction and 100% legal compliance."
     }
-  ],
-  "actor_metadata": {
-    "primary_actor": "trudax/reddit-scraper-lite",
-    "marketplace_actor": "apify/amazon-product-scraper",
-    "reviews_actor": "apify/amazon-reviews-scraper",
-    "trends_actor": "apify/google-trends-scraper",
-    "dataset_public_url": "https://api.apify.com/v2/datasets/sample-gtm-coffee-de/items?format=json",
-    "retrieval_timestamp": "2026-08-28T17:45:00Z",
-    "actor_id": "apify/multi-signal-suite (Reddit + Amazon + Trends)"
-  },
-  "aggregated_metrics": {
-    "total_posts_analyzed": 42,
-    "total_comments_analyzed": 318,
-    "sentiment_distribution": {
-      "positive_pct": 76.5,
-      "neutral_pct": 14.2,
-      "negative_pct": 9.3
-    },
-    "net_sentiment_score": 67.2,
-    "willingness_to_pay_range_eur": {
-      "min": 50.0,
-      "optimal_median": 68.0,
-      "max": 95.0
-    },
-    "key_purchase_drivers": [
-      "Thermal stability and high-fired ceramic craftsmanship",
-      "Fast intra-EU shipping without customs clearance delays",
-      "Sustainable double-walled recyclable packaging",
-      "Availability of replacement silicone gaskets and carafes"
-    ],
-    "key_friction_points": [
-      "Severe annoyance with non-EU customs clearance fees on UK/US orders (DHL \u20ac6 handling fee + VAT)",
-      "Strict requirement for German language user manuals and brew ratios",
-      "Expectation of PayPal and Klarna Pay Later at checkout"
-    ]
-  }
+  ]
 }
